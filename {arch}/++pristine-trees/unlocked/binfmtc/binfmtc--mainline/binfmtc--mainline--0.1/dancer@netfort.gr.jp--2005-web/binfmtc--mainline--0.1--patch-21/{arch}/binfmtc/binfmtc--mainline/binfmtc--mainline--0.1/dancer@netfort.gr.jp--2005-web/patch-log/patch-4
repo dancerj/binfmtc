@@ -1,0 +1,23 @@
+Revision: binfmtc--mainline--0.1--patch-4
+Archive: dancer@netfort.gr.jp--2005-web
+Creator: Junichi Uekawa <dancer@netfort.gr.jp>
+Date: Tue May 24 08:52:33 JST 2005
+Standard-date: 2005-05-23 23:52:33 GMT
+New-files: .arch-ids/binfmtc-lang-gcj.c.id
+    .arch-ids/binfmtgcj-interpreter.1.id binfmtc-lang-gcj.c
+    binfmtgcj-interpreter.1
+    debian/.arch-ids/gcjcompile.binfmts.id
+    debian/gcjcompile.binfmts tests/.arch-ids/java.sh.id
+    tests/.arch-ids/javatest.java.id tests/java.sh
+    tests/javatest.java
+Modified-files: ChangeLog Makefile.am NEWS
+    binfmtasm-interpreter.1 binfmtc-interpreter.1
+    changelogs/ChangeLog.mainline configure.ac
+    debian/binfmtc.postinst debian/binfmtc.postrm
+    debian/changelog debian/rules
+New-patches: dancer@netfort.gr.jp--2005-web/binfmtc--mainline--0.1--patch-4
+Summary: Add java support
+Keywords: 
+
+Add java support
+

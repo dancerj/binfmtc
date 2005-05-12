@@ -1,0 +1,21 @@
+Revision: binfmtc--mainline--0.1--patch-2
+Archive: dancer@ibookg4.dancer.netfort.gr.jp--2005
+Creator: Junichi Uekawa (dancer on ibook) <dancer@debian.org>
+Date: Tue May  3 08:03:02 JST 2005
+Standard-date: 2005-05-02 23:03:02 GMT
+New-files: .arch-ids/README.id
+    .arch-ids/binfmtc-lang-c.c.id
+    .arch-ids/binfmtc-lang-cxx.c.id .arch-ids/binfmtc.h.id
+    .arch-ids/unreg.sh.id README binfmtc-lang-c.c
+    binfmtc-lang-cxx.c binfmtc.h
+    tests/.arch-ids/cxxprint.cxx.id
+    tests/.arch-ids/cxxprint.sh.id tests/cxxprint.cxx
+    tests/cxxprint.sh unreg.sh
+Modified-files: ChangeLog Makefile binfmtc-interpreter.c
+    init.sh
+New-patches: dancer@ibookg4.dancer.netfort.gr.jp--2005/binfmtc--mainline--0.1--patch-2
+Summary: add C++ support, and error checking, and better testsuite.
+Keywords: 
+
+add C++ support, and error checking, and better testsuite.
+

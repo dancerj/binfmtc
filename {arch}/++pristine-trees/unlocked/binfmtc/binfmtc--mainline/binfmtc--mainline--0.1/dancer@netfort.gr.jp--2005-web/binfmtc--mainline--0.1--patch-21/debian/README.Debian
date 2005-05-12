@@ -1,0 +1,6 @@
+binfmtc for Debian
+--------------
+
+binfmt_misc handler for C languages, and others.
+
+ -- Junichi Uekawa <dancer@debian.org>, Sat May  7 05:50:42 2005

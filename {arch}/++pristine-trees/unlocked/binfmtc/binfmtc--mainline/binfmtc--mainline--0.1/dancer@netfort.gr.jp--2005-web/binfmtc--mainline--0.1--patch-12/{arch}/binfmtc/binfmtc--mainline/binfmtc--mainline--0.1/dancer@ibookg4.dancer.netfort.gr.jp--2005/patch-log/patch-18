@@ -1,0 +1,21 @@
+Revision: binfmtc--mainline--0.1--patch-18
+Archive: dancer@ibookg4.dancer.netfort.gr.jp--2005
+Creator: Junichi Uekawa (dancer on ibook) <dancer@debian.org>
+Date: Sat May  7 06:04:23 JST 2005
+Standard-date: 2005-05-06 21:04:23 GMT
+New-files: .arch-ids/COPYING.id COPYING debian/.arch-ids/=id
+    debian/.arch-ids/README.Debian.id
+    debian/.arch-ids/changelog.id
+    debian/.arch-ids/compat.id debian/.arch-ids/control.id
+    debian/.arch-ids/copyright.id debian/.arch-ids/dirs.id
+    debian/.arch-ids/rules.id debian/README.Debian
+    debian/changelog debian/compat debian/control
+    debian/copyright debian/dirs debian/rules
+New-directories: debian debian/.arch-ids
+Modified-files: ChangeLog Makefile.am
+New-patches: dancer@ibookg4.dancer.netfort.gr.jp--2005/binfmtc--mainline--0.1--patch-18
+Summary: debianization of source. add copyright file. install realcsh.c
+Keywords: 
+
+debianization of source. add copyright file. install realcsh.c
+

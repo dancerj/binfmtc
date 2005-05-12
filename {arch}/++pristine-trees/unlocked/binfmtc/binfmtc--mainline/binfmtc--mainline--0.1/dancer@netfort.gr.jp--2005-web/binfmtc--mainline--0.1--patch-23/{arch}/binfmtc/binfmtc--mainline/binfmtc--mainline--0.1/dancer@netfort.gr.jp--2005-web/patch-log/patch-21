@@ -1,0 +1,13 @@
+Revision: binfmtc--mainline--0.1--patch-21
+Archive: dancer@netfort.gr.jp--2005-web
+Creator: Junichi Uekawa <dancer@debian.org>
+Date: Sun May 28 21:29:25 JST 2006
+Standard-date: 2006-05-28 12:29:25 GMT
+Modified-files: changelogs/ChangeLog.mainline
+    debian/changelog debian/control
+New-patches: dancer@netfort.gr.jp--2005-web/binfmtc--mainline--0.1--patch-21
+Summary: gcc4.1 support
+Keywords: 
+
+gcc4.1 support
+

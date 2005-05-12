@@ -1,0 +1,12 @@
+Revision: binfmtc--mainline--0.1--patch-8
+Archive: dancer@ibookg4.dancer.netfort.gr.jp--2005
+Creator: Junichi Uekawa (dancer on ibook) <dancer@debian.org>
+Date: Tue May  3 23:20:46 JST 2005
+Standard-date: 2005-05-03 14:20:46 GMT
+Modified-files: ChangeLog Makefile.am binfmtc-interpreter.c
+New-patches: dancer@ibookg4.dancer.netfort.gr.jp--2005/binfmtc--mainline--0.1--patch-8
+Summary: handle space in filenames
+Keywords: 
+
+handle space in filenames
+

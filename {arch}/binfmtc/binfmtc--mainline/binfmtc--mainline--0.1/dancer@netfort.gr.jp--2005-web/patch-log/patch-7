@@ -1,0 +1,23 @@
+Revision: binfmtc--mainline--0.1--patch-7
+Archive: dancer@netfort.gr.jp--2005-web
+Creator: Junichi Uekawa (dancer on ibook) <dancer@debian.org>
+Date: Fri Jul 15 22:10:34 JST 2005
+Standard-date: 2005-07-15 13:10:34 GMT
+Modified-files: ChangeLog changelogs/ChangeLog.ibook-dancer
+    changelogs/ChangeLog.mainline realcsh.1 realcsh.c
+New-patches: dancer@ibookg4.dancer.netfort.gr.jp--2005/binfmtc--mainline--0.1--patch-32
+    dancer@ibookg4.dancer.netfort.gr.jp--2005/binfmtc--mainline--0.1--patch-33
+    dancer@netfort.gr.jp--2005-web/binfmtc--mainline--0.1--patch-7
+Summary: merge ibook change on realcsh
+Keywords: 
+
+merge ibook change on realcsh
+
+Patches applied:
+
+ * dancer@ibookg4.dancer.netfort.gr.jp--2005/binfmtc--mainline--0.1--patch-32
+   merge work done in web/atoron
+
+ * dancer@ibookg4.dancer.netfort.gr.jp--2005/binfmtc--mainline--0.1--patch-33
+   cprintf.c is done
+

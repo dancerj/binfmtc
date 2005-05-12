@@ -1,0 +1,3 @@
+package binfmtc
+interpreter /usr/bin/binfmtc-interpreter
+magic /*BINFMTC\x3a

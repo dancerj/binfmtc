@@ -1,0 +1,12 @@
+Revision: binfmtc--mainline--0.1--patch-13
+Archive: dancer@ibookg4.dancer.netfort.gr.jp--2005
+Creator: Junichi Uekawa (dancer on ibook) <dancer@debian.org>
+Date: Thu May  5 04:17:04 JST 2005
+Standard-date: 2005-05-04 19:17:04 GMT
+Modified-files: ChangeLog Makefile.am
+New-patches: dancer@ibookg4.dancer.netfort.gr.jp--2005/binfmtc--mainline--0.1--patch-13
+Summary: add missing test file
+Keywords: 
+
+add missing test file
+

@@ -1,0 +1,14 @@
+Revision: binfmtc--mainline--0.1--patch-17
+Archive: dancer@ibookg4.dancer.netfort.gr.jp--2005
+Creator: Junichi Uekawa (dancer on ibook) <dancer@debian.org>
+Date: Sat May  7 05:30:26 JST 2005
+Standard-date: 2005-05-06 20:30:26 GMT
+New-files: .arch-ids/NEWS.id NEWS
+    tests/.arch-ids/news-okay.sh.id tests/news-okay.sh
+Modified-files: ChangeLog Makefile.am
+New-patches: dancer@ibookg4.dancer.netfort.gr.jp--2005/binfmtc--mainline--0.1--patch-17
+Summary: add NEWS file
+Keywords: 
+
+add NEWS file
+

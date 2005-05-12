@@ -1,0 +1,30 @@
+Revision: binfmtc--mainline--0.1--patch-31
+Archive: dancer@ibookg4.dancer.netfort.gr.jp--2005
+Creator: Junichi Uekawa (dancer on ibook) <dancer@debian.org>
+Date: Sat Jun  4 06:03:28 JST 2005
+Standard-date: 2005-06-03 21:03:28 GMT
+New-files: .arch-ids/binfmtc-lang-f.c.id
+    .arch-ids/binfmtc-lang-p.c.id
+    .arch-ids/binfmtf-interpreter.1.id
+    .arch-ids/binfmtp-interpreter.1.id binfmtc-lang-f.c
+    binfmtc-lang-p.c binfmtf-interpreter.1
+    binfmtp-interpreter.1
+    debian/.arch-ids/fcompile.binfmts.id
+    debian/.arch-ids/pcompile.binfmts.id
+    debian/fcompile.binfmts debian/pcompile.binfmts
+    tests/.arch-ids/fortran.f.id
+    tests/.arch-ids/fortran.sh.id
+    tests/.arch-ids/pascal.pas.id
+    tests/.arch-ids/pascal.sh.id tests/fortran.f
+    tests/fortran.sh tests/pascal.pas tests/pascal.sh
+Modified-files: ChangeLog Makefile.am NEWS
+    binfmtc-interpreter.c changelogs/ChangeLog.ibook-dancer
+    configure.ac debian/binfmtc.postinst
+    debian/binfmtc.postrm debian/changelog debian/control
+    debian/rules
+New-patches: dancer@ibookg4.dancer.netfort.gr.jp--2005/binfmtc--mainline--0.1--patch-31
+Summary: Pascal and Fortran bindings
+Keywords: 
+
+Pascal and Fortran bindings
+

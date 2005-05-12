@@ -1,0 +1,38 @@
+Revision: binfmtc--mainline--0.1--patch-28
+Archive: dancer@ibookg4.dancer.netfort.gr.jp--2005
+Creator: Junichi Uekawa (dancer on ibook) <dancer@debian.org>
+Date: Fri Jun  3 18:08:39 JST 2005
+Standard-date: 2005-06-03 09:08:39 GMT
+New-files: .arch-ids/binfmtc-lang-gcj.c.id
+    .arch-ids/binfmtgcj-interpreter.1.id binfmtc-lang-gcj.c
+    binfmtgcj-interpreter.1
+    debian/.arch-ids/gcjcompile.binfmts.id
+    debian/gcjcompile.binfmts tests/.arch-ids/java.sh.id
+    tests/.arch-ids/javatest.java.id tests/java.sh
+    tests/javatest.java
+Modified-files: ChangeLog Makefile.am NEWS
+    binfmtasm-interpreter.1 binfmtc-interpreter.1
+    changelogs/ChangeLog.ibook-dancer
+    changelogs/ChangeLog.mainline configure.ac
+    debian/binfmtc.postinst debian/binfmtc.postrm
+    debian/changelog debian/rules
+New-patches: dancer@ibookg4.dancer.netfort.gr.jp--2005/binfmtc--mainline--0.1--patch-28
+    dancer@netfort.gr.jp--2005-web/binfmtc--mainline--0.1--patch-2
+    dancer@netfort.gr.jp--2005-web/binfmtc--mainline--0.1--patch-3
+    dancer@netfort.gr.jp--2005-web/binfmtc--mainline--0.1--patch-4
+Summary: merge from web mainstream
+Keywords: 
+
+merge from web mainstream
+
+Patches applied:
+
+ * dancer@netfort.gr.jp--2005-web/binfmtc--mainline--0.1--patch-2
+   merge ibook
+
+ * dancer@netfort.gr.jp--2005-web/binfmtc--mainline--0.1--patch-3
+   0.2 release on web
+
+ * dancer@netfort.gr.jp--2005-web/binfmtc--mainline--0.1--patch-4
+   Add java support
+

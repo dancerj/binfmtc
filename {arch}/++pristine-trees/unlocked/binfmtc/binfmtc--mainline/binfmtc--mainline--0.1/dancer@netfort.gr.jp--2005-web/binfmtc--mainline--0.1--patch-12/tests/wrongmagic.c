@@ -1,0 +1,3 @@
+/*BINWRONG:
+exit 1
+#      */

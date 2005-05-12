@@ -1,0 +1,13 @@
+Revision: binfmtc--mainline--0.1--patch-12
+Archive: dancer@netfort.gr.jp--2005-web
+Creator: Junichi Uekawa <dancer@debian.org>
+Date: Sat Nov 12 11:52:55 JST 2005
+Standard-date: 2005-11-12 02:52:55 GMT
+Modified-files: ChangeLog NEWS changelogs/ChangeLog.mainline
+    configure.ac debian/changelog
+New-patches: dancer@netfort.gr.jp--2005-web/binfmtc--mainline--0.1--patch-12
+Summary: 0.9-1 release
+Keywords: 
+
+0.9-1 release
+

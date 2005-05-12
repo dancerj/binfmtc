@@ -1,0 +1,13 @@
+Revision: binfmtc--mainline--0.1--patch-20
+Archive: dancer@netfort.gr.jp--2005-web
+Creator: Junichi Uekawa <dancer@debian.org>
+Date: Sun Jan  8 13:00:39 JST 2006
+Standard-date: 2006-01-08 04:00:39 GMT
+Modified-files: ChangeLog NEWS changelogs/ChangeLog.mainline
+    debian/changelog realksh.c
+New-patches: dancer@netfort.gr.jp--2005-web/binfmtc--mainline--0.1--patch-20
+Summary: add sched_yield call for better scheduling
+Keywords: 
+
+add sched_yield call for better scheduling
+

@@ -1,0 +1,12 @@
+Revision: binfmtc--mainline--0.1--patch-18
+Archive: dancer@netfort.gr.jp--2005-web
+Creator: Junichi Uekawa <dancer@debian.org>
+Date: Thu Jan  5 10:53:05 JST 2006
+Standard-date: 2006-01-05 01:53:05 GMT
+Modified-files: changelogs/ChangeLog.mainline realksh.c
+New-patches: dancer@netfort.gr.jp--2005-web/binfmtc--mainline--0.1--patch-18
+Summary: s/Kconfig/Kbuild
+Keywords: 
+
+s/Kconfig/Kbuild
+

@@ -1,0 +1,15 @@
+Revision: binfmtc--mainline--0.1--patch-15
+Archive: dancer@netfort.gr.jp--2005-web
+Creator: Junichi Uekawa (dancer on ibook) <dancer@debian.org>
+Date: Sun Jan  1 10:27:50 JST 2006
+Standard-date: 2006-01-01 01:27:50 GMT
+New-files: .arch-ids/realksh.c.1.id realksh.c.1
+Modified-files: ChangeLog Makefile.am NEWS
+    changelogs/ChangeLog.mainline configure.ac
+    debian/changelog realcsh.c.1 realksh.c
+New-patches: dancer@netfort.gr.jp--2005-web/binfmtc--mainline--0.1--patch-15
+Summary: improve realksh.c, and add manpage
+Keywords: 
+
+improve realksh.c, and add manpage
+

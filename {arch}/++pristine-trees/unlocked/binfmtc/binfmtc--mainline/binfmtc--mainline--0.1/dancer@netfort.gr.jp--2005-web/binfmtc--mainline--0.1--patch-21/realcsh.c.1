@@ -1,0 +1,60 @@
+.TH "realcsh" 1 "2005 May 3" "binfmt_misc Dancer" "binfmt_C"
+.SH "NAME"
+realcsh.c \- A shell for running C code
+.SH "SYNOPSIS"
+.BI "realcsh.c "
+.SH "DESCRIPTION"
+.B "realcsh.c"
+is an interactive shell that runs C source code.
+A line of input is handled as a line in
+.B "main()"
+function, and the resulting C code is compiled, and executed.
+
+If a line starting with
+.B "#"
+such as 
+.B "#include <stdio.h>"
+is entered, it is added to every code after that
+at the start of sourcecode.
+
+The list of such lines can be seen with
+.B "##"
+
+
+.SH "EXAMPLES"
+
+The following is an example session
+
+.nf
+$ realcsh.c
+REAL csh: printf("hello world\\n");
+hello world
+REAL csh: system ("pwd");
+/home/dancer/
+.hy
+
+.SH "INTERNALS" 
+The following is how the C code looks like.
+
+.nf
+/*BINFMTC:
+*/
+#include <stdlib.h>
+#include <unistd.h>
+#include <stdio.h>
+int main(int argc, char ** argv)
+{
+.I "input-line"
+return 0;
+}
+.hy
+
+.SH "AUTHOR"
+Junichi Uekawa (dancer@debian.org)
+
+Upstream page is available at 
+.B "http://www.netfort.gr.jp/~dancer/software/"
+
+.SH "SEE ALSO"
+.BR "binfmtc-interpreter" "(1)," 
+.BR "realksh.c" "(1)" 

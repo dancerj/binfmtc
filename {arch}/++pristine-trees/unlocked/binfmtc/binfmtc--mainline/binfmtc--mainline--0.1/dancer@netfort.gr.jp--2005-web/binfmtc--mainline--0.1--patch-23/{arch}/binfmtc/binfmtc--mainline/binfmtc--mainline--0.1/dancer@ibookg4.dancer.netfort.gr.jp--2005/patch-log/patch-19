@@ -1,0 +1,15 @@
+Revision: binfmtc--mainline--0.1--patch-19
+Archive: dancer@ibookg4.dancer.netfort.gr.jp--2005
+Creator: Junichi Uekawa (dancer on ibook) <dancer@debian.org>
+Date: Sat May  7 09:41:31 JST 2005
+Standard-date: 2005-05-07 00:41:31 GMT
+New-files: upaccho2/.arch-ids/=id
+    upaccho2/.arch-ids/upaccho2.c.id upaccho2/upaccho2.c
+New-directories: upaccho2 upaccho2/.arch-ids
+Modified-files: ChangeLog
+New-patches: dancer@ibookg4.dancer.netfort.gr.jp--2005/binfmtc--mainline--0.1--patch-19
+Summary: add example webserver
+Keywords: 
+
+add example webserver
+

@@ -1,0 +1,43 @@
+0.9 9 Nov 2005
+
++ add testsuite for amd64 assembly
+
+0.8 30 Aug 2005
+
+! Add clean-up and error checking.
+
+0.7 29 Jul 2005
+
++ Update binfmtc-init.sh and binfmtc-unreg.sh
++ realcsh.c supports ## and #include commands.
+
+0.6 19 June 2005
+
++ add testsuite for x86 assembly
+
+0.5 4 June 2005
+
++ Add Fortran support
++ Add Pascal support
+
+0.4 4 June 2005
+
+! Use daemon properly so that we don't have stale process.
+
+0.3 24 May 2005
+
++ Add Java support
+
+0.2 23 May 2005
+
++ Debian package
+
+0.1 7 May 2005
+
++ Create Initial distribution
+
+[KEYS
++: additional feature
+!: bugfixes
+-: obsoletion
+]

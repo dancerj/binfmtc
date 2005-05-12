@@ -1,0 +1,26 @@
+Revision: binfmtc--mainline--0.1--patch-32
+Archive: dancer@ibookg4.dancer.netfort.gr.jp--2005
+Creator: Junichi Uekawa (dancer on ibook) <dancer@debian.org>
+Date: Thu Jul  7 07:45:12 JST 2005
+Standard-date: 2005-07-06 22:45:12 GMT
+New-files: tests/.arch-ids/asm-x86.S.id tests/asm-x86.S
+Modified-files: ChangeLog Makefile.am NEWS
+    changelogs/ChangeLog.ibook-dancer
+    changelogs/ChangeLog.mainline configure.ac
+    debian/changelog tests/asm.sh
+New-patches: dancer@ibookg4.dancer.netfort.gr.jp--2005/binfmtc--mainline--0.1--patch-32
+    dancer@netfort.gr.jp--2005-web/binfmtc--mainline--0.1--patch-5
+    dancer@netfort.gr.jp--2005-web/binfmtc--mainline--0.1--patch-6
+Summary: merge work done in web/atoron
+Keywords: 
+
+merge work done in web/atoron
+
+Patches applied:
+
+ * dancer@netfort.gr.jp--2005-web/binfmtc--mainline--0.1--patch-5
+   merge ibook for 0.4, 0.5 changes 
+
+ * dancer@netfort.gr.jp--2005-web/binfmtc--mainline--0.1--patch-6
+   add x86 test
+

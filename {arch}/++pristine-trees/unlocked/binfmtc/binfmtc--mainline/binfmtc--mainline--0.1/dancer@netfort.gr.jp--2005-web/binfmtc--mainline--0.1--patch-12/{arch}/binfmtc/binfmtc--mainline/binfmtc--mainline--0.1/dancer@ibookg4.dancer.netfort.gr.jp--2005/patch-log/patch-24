@@ -1,0 +1,13 @@
+Revision: binfmtc--mainline--0.1--patch-24
+Archive: dancer@ibookg4.dancer.netfort.gr.jp--2005
+Creator: Junichi Uekawa (dancer on ibook) <dancer@debian.org>
+Date: Wed May 11 11:53:22 JST 2005
+Standard-date: 2005-05-11 02:53:22 GMT
+Modified-files: ChangeLog binfmtc-interpreter.c
+    upaccho2/upaccho2.c
+New-patches: dancer@ibookg4.dancer.netfort.gr.jp--2005/binfmtc--mainline--0.1--patch-24
+Summary: daemonize background process, not much effect
+Keywords: 
+
+daemonize background process, not much effect
+

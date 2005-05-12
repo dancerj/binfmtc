@@ -1,0 +1,184 @@
+2005-05-11  Junichi Uekawa  <dancer@debian.org>
+
+	* binfmtc-interpreter.c (exec_prog): change child process: do an explicit exit, and daemon before sleep.
+
+2005-05-08  Junichi Uekawa  <dancer@debian.org>
+
+	* upaccho2/upaccho2-webservice.h: 
+	* upaccho2/upaccho2.c (main): use split-out webservice.c
+	* upaccho2/upaccho2-webservice.c (main): new
+
+	* Makefile.am (EXTRA_DIST): add
+
+2005-05-07  Junichi Uekawa  <dancer@debian.org>
+
+	* upaccho2/upaccho2.c: An example webserver.
+
+	* Makefile.am (dist_bin_SCRIPTS): add realcsh.c to installation.
+
+	* debian/changelog: Add Debian support
+
+	* tests/news-okay.sh: 
+	* NEWS: 
+	* Makefile.am: check and create NEWS file.
+
+2005-05-06  Junichi Uekawa  <dancer@debian.org>
+
+	* binfmtasm-interpreter.1: 
+	* binfmtcxx-interpreter.1: 
+	* binfmtc-interpreter.1: document BINFMTCTMPDIR.
+	* binfmtc-interpreter.c (compile_source): 
+	* realcsh.c (main): use BINFMTCTMPDIR variable for default TMPDIR.
+	TMPDIR may be mounted noexec.
+
+2005-05-05  Junichi Uekawa  <dancer@debian.org>
+
+	* tests/asm.sh: add set -e.
+
+	* README: remove stale comments.
+
+	* Makefile.am (EXTRA_DIST): add tests/asm-ppc.S
+
+	* unreg.sh: add
+	* init.sh: add asm
+
+	* Makefile.am (dist_man_MANS): add man.
+
+	* binfmtasm-interpreter.1: created
+
+	* tests/asm-ppc.S: A test output from gcc.
+
+	* tests/asm.sh: test
+
+	* Makefile.am (bin_PROGRAMS, binfmtasm_interpreter_SOURCES): add.
+
+	* binfmtc-lang-asm.c (compiler_name): new file.
+
+	* binfmtc-interpreter.c (compile_source): 
+	* binfmtc-lang-c.c: rearrange gcc_x, "-x c" is passed on, 
+	instead of using "-x %s" and "c"
+
+2005-05-04  Junichi Uekawa  <dancer@debian.org>
+
+	* tests/space.sh: fix distcheck.
+
+	* Makefile.am (tree-check): add chmod.
+
+2005-05-03  Junichi Uekawa  <dancer@debian.org>
+
+	* tests/space.sh: change to generate file name with space instead of 
+	trying to handle it with automake.
+
+	* Makefile.am (dist_man_MANS): add it to dist list.
+	(tree-check): added a check target so that tla tree is correct.
+
+	* realcsh.1: A new manual page
+
+	* binfmtcxx-interpreter.1: A new manual page
+
+	* binfmtc-interpreter.1: A new manual page
+
+	* Makefile.am (TESTS): add test to testsuite
+
+	* binfmtc-interpreter.c (compile_source): quote string so that filename with
+	space can be handled.
+
+	* tests/space.sh: test
+	* tests/filename with space.c: new test file.
+
+	* realcsh.c (main): fix warnings.
+
+	* Makefile.am (EXTRA_DIST): distribute realcsh.c
+
+	* binfmtc-interpreter.c (exec_prog): fix comment string.
+
+	* realcsh.c: real csh.
+
+	* tests/multisource.c, tests/multisource1.c, tests/print.c, tests/wrongcode.c, tests/wrongmagic.c, tests/cxxprint.cxx: 
+	add "exit 1" in comment, so that it fails when invoked through bin/sh.
+
+	* tests/prerequisite.sh: testing.
+	* Makefile.am (TESTS): add prerequisite testing.
+
+	* binfmtc-interpreter.c (exec_prog): wait for ppid, instead of sleeping for 1 sec.
+
+	* {arch}/=tagging-method: treat .deps directory as junk.
+
+	* binfmtc-interpreter.c (compile_source): remove the temporary file on 
+	error exit.
+
+	* tests/cxxprint.sh: 
+	* tests/multisource.sh: 
+	* tests/print.sh: 
+	* tests/wrongcode.sh: 
+	* tests/wrongmagic.sh: use ${srcdir} for path.
+
+	* configure.ac: use autoconf, mark it version 0.1
+
+	* Makefile.am: use automake
+
+	* autogen.sh: new script
+
+	* tests/wrongmagic.sh: invoke interpreter explicitly
+
+	* tests/wrongmagic.c: make this thing harmless, when invoked as a shell script.
+
+	* README (BINFMTC_DEBUG): update
+
+	* binfmtc-lang-cxx.c (default_options): Ditto. Fall back to -O0 for G++ since
+	it is slow otherwise.
+
+	* binfmtc-lang-c.c (default_options): C default options, use BINFMTC_GCC_OPTS
+	environmental variable, and fallback to -O2 -Wall.
+
+	* binfmtc.h (default_options): new function.
+
+	* binfmtc-interpreter.c (compile_source): use default options for gcc.
+
+	* Makefile (test): add testsuite
+	(test): check for cxx compile support as well.
+
+	* tests/cxxprint.cxx (main): A cxx example test script.
+
+	* tests/cxxprint.sh: script to run test
+
+	* unreg.sh: unregister script
+
+	* Makefile (binfmtcxx-interpreter): add compilation for C++ binding.
+
+	* binfmtc-lang-cxx.c (compiler_name): A language binding for C++
+
+	* binfmtc-lang-c.c (compiler_name): New file to better handle multi-language.
+
+	* init.sh: switch to magic-based identification instead of filename-based,
+		and add C++ binding.
+	
+	* binfmtc-interpreter.c (main): Show id.
+	(compile_source): pass -x option to set file-type
+
+	* Makefile (test): check for ccompile support in binfmt_misc.
+
+	* binfmtc-interpreter.c (exec_prog, compile_source): add error checking.
+
+	* tests/print.c: 
+	* tests/wrongmagic.sh: 
+	* tests/wrongmagic.c: 
+	* tests/wrongcode.sh: 
+	* tests/wrongcode.c: 
+	* tests/print.sh: 
+	* tests/multisource1.c: 
+	* tests/multisource.sh: 
+	* tests/multisource.c: 
+	* Makefile: add testsuite
+
+	* binfmtc-interpreter.c: 
+	* print.c: add copyright statement
+
+	* init.sh: script to initialize
+
+	* print.c: An example
+
+	* Makefile: New
+
+	* binfmtc-interpreter.c: Created
+

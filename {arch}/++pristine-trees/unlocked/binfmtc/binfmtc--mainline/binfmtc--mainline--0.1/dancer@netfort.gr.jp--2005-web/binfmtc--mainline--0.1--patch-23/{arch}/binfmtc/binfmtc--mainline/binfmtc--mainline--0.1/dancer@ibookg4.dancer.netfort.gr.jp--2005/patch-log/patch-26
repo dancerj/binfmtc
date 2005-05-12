@@ -1,0 +1,24 @@
+Revision: binfmtc--mainline--0.1--patch-26
+Archive: dancer@ibookg4.dancer.netfort.gr.jp--2005
+Creator: Junichi Uekawa (dancer on ibook) <dancer@debian.org>
+Date: Thu May 12 21:40:06 JST 2005
+Standard-date: 2005-05-12 12:40:06 GMT
+New-files: changelogs/.arch-ids/ChangeLog.mainline.id
+    changelogs/ChangeLog.mainline
+Modified-files: changelogs/ChangeLog.ibook-dancer
+New-patches: dancer@ibookg4.dancer.netfort.gr.jp--2005/binfmtc--mainline--0.1--patch-26
+    dancer@netfort.gr.jp--2005-web/binfmtc--mainline--0.1--base-0
+    dancer@netfort.gr.jp--2005-web/binfmtc--mainline--0.1--patch-1
+Summary: merge with web
+Keywords: 
+
+merge with web
+
+Patches applied:
+
+ * dancer@netfort.gr.jp--2005-web/binfmtc--mainline--0.1--base-0
+   tag of dancer@ibookg4.dancer.netfort.gr.jp--2005/binfmtc--mainline--0.1--patch-24
+
+ * dancer@netfort.gr.jp--2005-web/binfmtc--mainline--0.1--patch-1
+   merge and add ChangeLogs
+

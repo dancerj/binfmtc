@@ -1,0 +1,14 @@
+Revision: binfmtc--mainline--0.1--patch-10
+Archive: dancer@ibookg4.dancer.netfort.gr.jp--2005
+Creator: Junichi Uekawa (dancer on ibook) <dancer@debian.org>
+Date: Wed May  4 00:00:43 JST 2005
+Standard-date: 2005-05-03 15:00:43 GMT
+Removed-files: tests/.arch-ids/filename\(sp)with\(sp)space.c.id
+    tests/filename\(sp)with\(sp)space.c
+Modified-files: ChangeLog Makefile.am tests/space.sh
+New-patches: dancer@ibookg4.dancer.netfort.gr.jp--2005/binfmtc--mainline--0.1--patch-10
+Summary: add tree-check target to check tla tree if it is buildable; fix file with space, so that it is buildable
+Keywords: 
+
+add tree-check target to check tla tree if it is buildable; fix file with space, so that it is buildable
+

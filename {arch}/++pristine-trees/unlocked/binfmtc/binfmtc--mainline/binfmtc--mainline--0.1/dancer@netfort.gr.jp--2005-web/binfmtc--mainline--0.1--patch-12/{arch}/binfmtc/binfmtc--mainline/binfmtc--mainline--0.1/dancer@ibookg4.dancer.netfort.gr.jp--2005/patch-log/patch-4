@@ -1,0 +1,18 @@
+Revision: binfmtc--mainline--0.1--patch-4
+Archive: dancer@ibookg4.dancer.netfort.gr.jp--2005
+Creator: Junichi Uekawa (dancer on ibook) <dancer@debian.org>
+Date: Tue May  3 09:32:05 JST 2005
+Standard-date: 2005-05-03 00:32:05 GMT
+New-files: .arch-ids/Makefile.am.id .arch-ids/autogen.sh.id
+    .arch-ids/configure.ac.id Makefile.am autogen.sh
+    configure.ac
+Removed-files: .arch-ids/Makefile.id Makefile
+Modified-files: ChangeLog README tests/cxxprint.sh
+    tests/multisource.sh tests/print.sh tests/wrongcode.sh
+    tests/wrongmagic.sh
+New-patches: dancer@ibookg4.dancer.netfort.gr.jp--2005/binfmtc--mainline--0.1--patch-4
+Summary: use automake/autoconf for configuration, and allow for instant distribution
+Keywords: 
+
+use automake/autoconf for configuration, and allow for instant distribution
+

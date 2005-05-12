@@ -1,0 +1,13 @@
+Revision: binfmtc--mainline--0.1--patch-13
+Archive: dancer@netfort.gr.jp--2005-web
+Creator: Junichi Uekawa (dancer on ibook) <dancer@debian.org>
+Date: Mon Nov 21 00:57:35 JST 2005
+Standard-date: 2005-11-20 15:57:35 GMT
+Modified-files: ChangeLog changelogs/ChangeLog.mainline
+    tests/asm-ppc.S
+New-patches: dancer@netfort.gr.jp--2005-web/binfmtc--mainline--0.1--patch-13
+Summary: update ppc asm for better implementation
+Keywords: 
+
+update ppc asm for better implementation
+
