@@ -1,0 +1,10 @@
+#! /bin/sh
+
+#import binfmt.
+if [ configure = "$1" -a -x /usr/sbin/update-binfmts ]; then
+    /usr/sbin/update-binfmts --import ccompile
+    /usr/sbin/update-binfmts --import cxxcompile
+    /usr/sbin/update-binfmts --import asmassembly
+fi
+
+#DEBHELPER#

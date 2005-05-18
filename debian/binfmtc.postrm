@@ -1,0 +1,13 @@
+#! /bin/sh
+
+#remove binfmt
+if [ remove = "$1" -a -x /usr/sbin/update-binfmts ]; then
+    /usr/sbin/update-binfmts --package binfmtc \
+	--remove ccompile /usr/bin/binfmtc-interpreter
+    /usr/sbin/update-binfmts --package binfmtc \
+	--remove cxxcompile /usr/bin/binfmtcxx-interpreter
+    /usr/sbin/update-binfmts --package binfmtc \
+	--remove asmassembly /usr/bin/binfmtasm-interpreter
+fi
+
+#DEBHELPER#

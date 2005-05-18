@@ -1,3 +1,16 @@
+2005-05-13  Junichi Uekawa  <dancer@debian.org>
+
+	* tests/space.sh: change testsuite to clean up even after error.
+
+	* debian/rules (install): install binfmts script.
+	* debian/dirs: add binfmts directory.
+
+	* debian/binfmtasm.binfmts: create
+	* debian/binfmtcxx.binfmts: create
+	* debian/binfmtc.binfmts: create
+	* debian/binfmtc.postrm: create
+	* debian/binfmtc.postinst: create
+
 2005-05-11  Junichi Uekawa  <dancer@debian.org>
 
 	* binfmtc-interpreter.c (exec_prog): change child process: do an explicit exit, and daemon before sleep.

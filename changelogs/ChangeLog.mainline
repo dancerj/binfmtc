@@ -2,6 +2,44 @@
 # arch-tag: automatic-ChangeLog--dancer@netfort.gr.jp--2005-web/binfmtc--mainline--0.1
 #
 
+2005-05-18 21:58:54 GMT	Junichi Uekawa (dancer on ibook) <dancer@debian.org>	patch-2
+
+    Summary:
+      merge ibook
+    Revision:
+      binfmtc--mainline--0.1--patch-2
+
+    merge ibook
+    
+    Patches applied:
+    
+     * dancer@ibookg4.dancer.netfort.gr.jp--2005/binfmtc--mainline--0.1--patch-26
+       merge with web
+    
+     * dancer@ibookg4.dancer.netfort.gr.jp--2005/binfmtc--mainline--0.1--patch-27
+       binfmt-support support added
+    
+
+    new files:
+     debian/.arch-ids/asmassembly.binfmts.id
+     debian/.arch-ids/binfmtc.postinst.id
+     debian/.arch-ids/binfmtc.postrm.id
+     debian/.arch-ids/ccompile.binfmts.id
+     debian/.arch-ids/cxxcompile.binfmts.id
+     debian/asmassembly.binfmts debian/binfmtc.postinst
+     debian/binfmtc.postrm debian/ccompile.binfmts
+     debian/cxxcompile.binfmts
+
+    modified files:
+     ChangeLog changelogs/ChangeLog.ibook-dancer
+     changelogs/ChangeLog.mainline debian/control debian/dirs
+     debian/rules tests/space.sh
+
+    new patches:
+     dancer@ibookg4.dancer.netfort.gr.jp--2005/binfmtc--mainline--0.1--patch-26
+     dancer@ibookg4.dancer.netfort.gr.jp--2005/binfmtc--mainline--0.1--patch-27
+
+
 2005-05-12 12:36:01 GMT	Junichi Uekawa (dancer on ibook) <dancer@debian.org>	patch-1
 
     Summary:

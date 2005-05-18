@@ -7,11 +7,9 @@ Standards-Version: 3.6.1
 
 Package: binfmtc
 Architecture: any
-Depends: ${shlibs:Depends}, gcc, binutils, g++
+Depends: ${shlibs:Depends}, gcc, binutils, g++, binfmt-support
 Description: Execute C program as script
  Linux binfmt_misc handler for C, C++, Assembly languages.
  .
  Using the binfmt_misc interface, binfmtc allows users to 
  seamlessly execute C source code as if they were scripts.
- .
- TODO: depend on gpc, gcj, binfmt-support

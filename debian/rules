@@ -50,6 +50,9 @@ install: build
 	dh_clean -k
 	dh_installdirs
 	$(MAKE) install DESTDIR=$(CURDIR)/debian/binfmtc
+	for A in ccompile cxxcompile asmassembly; do \
+		$(INSTALL_FILE) debian/$$A.binfmts $(CURDIR)/debian/binfmtc/usr/share/binfmts/$$A ; \
+		done
 
 # Build architecture-independent files here.
 binary-indep: build install

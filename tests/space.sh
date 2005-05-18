@@ -14,5 +14,11 @@ int main(int argc, char** argv)
 }
 EOF
 chmod 700 "tests/filename with space.c"
-"tests/filename with space.c"
+if "tests/filename with space.c"; then
+    EXIT=0;
+else
+    EXIT=1;
+fi
 rm "tests/filename with space.c" 
+
+exit ${EXIT}
