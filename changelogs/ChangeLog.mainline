@@ -2,6 +2,21 @@
 # arch-tag: automatic-ChangeLog--dancer@netfort.gr.jp--2005-web/binfmtc--mainline--0.1
 #
 
+2005-05-22 22:35:36 GMT	Junichi Uekawa <dancer@netfort.gr.jp>	patch-3
+
+    Summary:
+      0.2 release on web
+    Revision:
+      binfmtc--mainline--0.1--patch-3
+
+    0.2 release on web
+    
+
+    modified files:
+     NEWS changelogs/ChangeLog.mainline configure.ac
+     debian/changelog
+
+
 2005-05-18 21:58:54 GMT	Junichi Uekawa (dancer on ibook) <dancer@debian.org>	patch-2
 
     Summary:
