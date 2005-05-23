@@ -1,7 +1,8 @@
-bin_PROGRAMS=binfmtc-interpreter binfmtcxx-interpreter binfmtasm-interpreter
+bin_PROGRAMS=binfmtc-interpreter binfmtcxx-interpreter binfmtasm-interpreter binfmtgcj-interpreter
 binfmtcxx_interpreter_SOURCES=binfmtc-interpreter.c binfmtc-lang-cxx.c binfmtc.h
 binfmtc_interpreter_SOURCES=binfmtc-interpreter.c binfmtc-lang-c.c binfmtc.h
 binfmtasm_interpreter_SOURCES=binfmtc-interpreter.c binfmtc-lang-asm.c binfmtc.h
+binfmtgcj_interpreter_SOURCES=binfmtc-interpreter.c binfmtc-lang-gcj.c binfmtc.h
 dist_bin_SCRIPTS= realcsh.c
 
 TESTS= tests/prerequisite.sh \
@@ -10,11 +11,13 @@ TESTS= tests/prerequisite.sh \
 	tests/multisource.sh \
 	tests/wrongcode.sh \
 	tests/cxxprint.sh \
+	tests/java.sh \
 	tests/space.sh \
 	tests/asm.sh \
 	tests/news-okay.sh
 
-dist_man_MANS= binfmtc-interpreter.1 binfmtcxx-interpreter.1 realcsh.1 binfmtasm-interpreter.1
+dist_man_MANS= binfmtc-interpreter.1 binfmtcxx-interpreter.1 realcsh.1 binfmtasm-interpreter.1 \
+	binfmtgcj-interpreter.1
 
 TESTS_ENVIRONMENT=bindir=$(bindir) \
 	LC_ALL=C \
@@ -30,6 +33,7 @@ EXTRA_DIST= autogen.sh init.sh unreg.sh \
 	tests/wrongmagic.c \
 	tests/asm-ppc.S \
 	tests/cxxprint.cxx  \
+	tests/javatest.java  \
 	upaccho2/upaccho2.c \
 	upaccho2/upaccho2-webservice.c \
 	upaccho2/upaccho2-webservice.h
@@ -56,4 +60,4 @@ tree-check:
 	-chmod u+w -R /tmp/tlatest/
 	-rm -rf /tmp/tlatest
 	-mkdir /tmp/tlatest 
-	cd /tmp/tlatest && tla get binfmtc--mainline && cd binfmtc--mainline* && ./autogen.sh && ./configure && make distcheck
+	cd /tmp/tlatest && tla get $(shell tla tree-version) && cd binfmtc--mainline* && ./autogen.sh && ./configure && make distcheck

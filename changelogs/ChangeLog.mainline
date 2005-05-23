@@ -2,6 +2,31 @@
 # arch-tag: automatic-ChangeLog--dancer@netfort.gr.jp--2005-web/binfmtc--mainline--0.1
 #
 
+2005-05-23 23:52:33 GMT	Junichi Uekawa <dancer@netfort.gr.jp>	patch-4
+
+    Summary:
+      Add java support
+    Revision:
+      binfmtc--mainline--0.1--patch-4
+
+    Add java support
+    
+
+    new files:
+     .arch-ids/binfmtc-lang-gcj.c.id
+     .arch-ids/binfmtgcj-interpreter.1.id binfmtc-lang-gcj.c
+     binfmtgcj-interpreter.1 debian/.arch-ids/gcjcompile.binfmts.id
+     debian/gcjcompile.binfmts tests/.arch-ids/java.sh.id
+     tests/.arch-ids/javatest.java.id tests/java.sh
+     tests/javatest.java
+
+    modified files:
+     ChangeLog Makefile.am NEWS binfmtasm-interpreter.1
+     binfmtc-interpreter.1 changelogs/ChangeLog.mainline
+     configure.ac debian/binfmtc.postinst debian/binfmtc.postrm
+     debian/changelog debian/rules
+
+
 2005-05-22 22:35:36 GMT	Junichi Uekawa <dancer@netfort.gr.jp>	patch-3
 
     Summary:

@@ -1,12 +1,12 @@
-.TH "binfmtasm" 1 "2005 May 3" "binfmt_misc Dancer" "binfmt_C"
+.TH "binfmtgcj" 1 "2005 May 3" "binfmt_misc Dancer" "binfmt_C"
 .SH NAME
-binfmtasm-interpreter \- binfmt_misc Assembly handler
+binfmtgcj-interpreter \- binfmt_misc gcj handler
 .SH SYNOPSIS
-.BI "binfmtasm-interpreter " "Assembly-source-file-name" " [" "command-line opions ..." "]"
+.BI "binfmtgcj-interpreter " "GCJ-java-source-file-name" " [" "command-line opions ..." "]"
 .SH "DESCRIPTION"
-.B "binfmtasm-interpreter"
-compiles an assembly source file specified on the command-line using 
-gas compiler, and executes the resulting file.
+.B "binfmtgcj-interpreter"
+compiles a Java source file specified on the command-line using 
+the GCJ compiler, and executes the resulting file.
 
 It is designed to be used as a handler for 
 .B "binfmt_misc"
@@ -18,31 +18,20 @@ compiled binary.
 
 .SH "FILE MAGIC"
 
-There is a requirement for C++ source files to have the 
+There is a requirement for C source files to have the 
 magic characters
-.B "/*BINFMTASMCPP:"
+.B "//BINFMTGCJ:"
 at the beginning of the file.
 
 That line also is used to specify the additional command-line options
-for the assmebler.
+for C compiler.
 
 .SH "ENVIRONMENT"
 .TP
-.B "GAS"
+.B "GCJ"
 The compiler used.
 The default is to use
-.B "gcc"
-
-.TP
-.B "AS"
-The compiler used, if 
-.B "GAS"
-variable is not set.
-
-Will fall back to using
-.B "GCC"
-and 
-.B "CC"
+.B "gcj"
 
 .TP
 .B "BINFMTCTMPDIR"
@@ -60,13 +49,13 @@ or
 enables debug output if set.
 
 .TP
-.B "BINFMTASM_GAS_OPTS"
-Additional G++ options.
+.B "BINFMTC_GCJ_OPTS"
+Additional GCJ options.
 Use 
 .B "BINFMTC_DEBUG"
-to verify the options being passed on to g++.
+to verify the options being passed on to gcc.
 
-The default is 
+The default is
 .B " -O2 -Wall "
 
 .SH "AUTHOR"
@@ -77,4 +66,5 @@ Upstream page is available at
 
 .SH "SEE ALSO"
 .BR "binfmtc-interpreter" "(1), " 
-.BR "binfmtcxx-interpreter" "(1)" 
+.BR "binfmtcxx-interpreter" "(1), " 
+.BR "binfmtasm-interpreter" "(1)" 
