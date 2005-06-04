@@ -8,6 +8,7 @@ Standards-Version: 3.6.1
 Package: binfmtc
 Architecture: any
 Depends: ${shlibs:Depends}, gcc, binutils, g++, binfmt-support
+Suggests: g77, gcj, libgcj4-dev, gpc
 Description: Execute C program as script
  Linux binfmt_misc handler for C, C++, Assembly languages.
  .

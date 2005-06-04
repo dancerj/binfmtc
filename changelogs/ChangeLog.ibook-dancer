@@ -2,6 +2,108 @@
 # arch-tag: automatic-ChangeLog--dancer@ibookg4.dancer.netfort.gr.jp--2005/binfmtc--mainline--0.1
 #
 
+2005-06-03 21:03:28 GMT	Junichi Uekawa (dancer on ibook) <dancer@debian.org>	patch-31
+
+    Summary:
+      Pascal and Fortran bindings
+    Revision:
+      binfmtc--mainline--0.1--patch-31
+
+    Pascal and Fortran bindings
+    
+
+    new files:
+     .arch-ids/binfmtc-lang-f.c.id .arch-ids/binfmtc-lang-p.c.id
+     .arch-ids/binfmtf-interpreter.1.id
+     .arch-ids/binfmtp-interpreter.1.id binfmtc-lang-f.c
+     binfmtc-lang-p.c binfmtf-interpreter.1 binfmtp-interpreter.1
+     debian/.arch-ids/fcompile.binfmts.id
+     debian/.arch-ids/pcompile.binfmts.id debian/fcompile.binfmts
+     debian/pcompile.binfmts tests/.arch-ids/fortran.f.id
+     tests/.arch-ids/fortran.sh.id tests/.arch-ids/pascal.pas.id
+     tests/.arch-ids/pascal.sh.id tests/fortran.f tests/fortran.sh
+     tests/pascal.pas tests/pascal.sh
+
+    modified files:
+     ChangeLog Makefile.am NEWS binfmtc-interpreter.c
+     changelogs/ChangeLog.ibook-dancer configure.ac
+     debian/binfmtc.postinst debian/binfmtc.postrm debian/changelog
+     debian/control debian/rules
+
+
+2005-06-03 15:36:36 GMT	Junichi Uekawa (dancer on ibook) <dancer@debian.org>	patch-30
+
+    Summary:
+      fix process waiting for file deletion
+    Revision:
+      binfmtc--mainline--0.1--patch-30
+
+    fix process waiting for file deletion
+    
+
+    modified files:
+     ChangeLog NEWS binfmtc-interpreter.c
+     changelogs/ChangeLog.ibook-dancer configure.ac
+     debian/changelog
+
+
+2005-06-03 10:47:23 GMT	Junichi Uekawa (dancer on ibook) <dancer@debian.org>	patch-29
+
+    Summary:
+      demorevert
+    Revision:
+      binfmtc--mainline--0.1--patch-29
+
+    demorevert
+    
+
+    modified files:
+     changelogs/ChangeLog.ibook-dancer debian/changelog
+     debian/rules
+
+
+2005-06-03 09:08:39 GMT	Junichi Uekawa (dancer on ibook) <dancer@debian.org>	patch-28
+
+    Summary:
+      merge from web mainstream
+    Revision:
+      binfmtc--mainline--0.1--patch-28
+
+    merge from web mainstream
+    
+    Patches applied:
+    
+     * dancer@netfort.gr.jp--2005-web/binfmtc--mainline--0.1--patch-2
+       merge ibook
+    
+     * dancer@netfort.gr.jp--2005-web/binfmtc--mainline--0.1--patch-3
+       0.2 release on web
+    
+     * dancer@netfort.gr.jp--2005-web/binfmtc--mainline--0.1--patch-4
+       Add java support
+    
+
+    new files:
+     .arch-ids/binfmtc-lang-gcj.c.id
+     .arch-ids/binfmtgcj-interpreter.1.id binfmtc-lang-gcj.c
+     binfmtgcj-interpreter.1 debian/.arch-ids/gcjcompile.binfmts.id
+     debian/gcjcompile.binfmts tests/.arch-ids/java.sh.id
+     tests/.arch-ids/javatest.java.id tests/java.sh
+     tests/javatest.java
+
+    modified files:
+     ChangeLog Makefile.am NEWS binfmtasm-interpreter.1
+     binfmtc-interpreter.1 changelogs/ChangeLog.ibook-dancer
+     changelogs/ChangeLog.mainline configure.ac
+     debian/binfmtc.postinst debian/binfmtc.postrm debian/changelog
+     debian/rules
+
+    new patches:
+     dancer@netfort.gr.jp--2005-web/binfmtc--mainline--0.1--patch-2
+     dancer@netfort.gr.jp--2005-web/binfmtc--mainline--0.1--patch-3
+     dancer@netfort.gr.jp--2005-web/binfmtc--mainline--0.1--patch-4
+
+
 2005-05-12 22:25:36 GMT	Junichi Uekawa (dancer on ibook) <dancer@debian.org>	patch-27
 
     Summary:

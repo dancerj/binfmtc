@@ -25,6 +25,7 @@
 #include <unistd.h>
 #include <string.h>
 #include <ctype.h>
+#include <sys/wait.h>
 #include "binfmtc.h"
 
 #define BINFMTC_MAGIC_LEN strlen(binfmtc_magic)
@@ -150,7 +151,9 @@ const char* compile_source(const char *sourcename)
  */
 int exec_prog(const char * filename, int argc, char**argv)
 {
-  switch(fork())
+  int pid;
+
+  switch(pid=fork())
     {
     case -1:
       /* fork failed */
@@ -161,12 +164,16 @@ int exec_prog(const char * filename, int argc, char**argv)
     case 0:
       /* when I am the child process, just unlink after 1 seconds; 
 	 the parent process should have exec'd by now. */
-      daemon(0,0);
+      if (daemon(0,0) < 0)
+	{
+	  exit (-1);
+	}
       sleep(1);
       unlink(filename);
       exit(0);
     default:
       /* I am the parent process, exec into the built program */
+      waitpid(pid,NULL,0);
       execvp(filename, argv);
       fprintf(stderr, 
 	      "binfmtc: failed execvp of %s \n", filename);

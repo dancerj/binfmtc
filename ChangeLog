@@ -1,22 +1,49 @@
+2005-06-04  Junichi Uekawa  <dancer@debian.org>
+
+	* configure.ac: 0.5
+	* NEWS: 0.5
+	* binfmtc-interpreter.c: include sys/wait.h
+	* debian/pcompile.binfmts: 
+	* debian/binfmtc.postrm: 
+	* debian/binfmtc.postinst: 
+	* debian/rules (install): 
+	* binfmtp-interpreter.1: 
+	* binfmtc-lang-p.c (default_options): Add
+	* Makefile.am (EXTRA_DIST): pascal
+	(TESTS): pascal
+	(bin_PROGRAMS, binfmtp_interpreter_SOURCES, dist_man_MANS): 
+	* tests/pascal.sh: 
+	* tests/pascal.pas: implement pascal binding.
+
+	* debian/binfmtc.postinst: add fcompile
+	* debian/binfmtc.postrm: add fcompile
+	* debian/fcompile.binfmts: create
+	* debian/rules (install): add fcompile.
+	* Makefile.am (dist_man_MANS): add
+	* binfmtf-interpreter.1: create
+	* binfmtc-lang-f.c: add fortran
+	* Makefile.am (TESTS, EXTRA_DIST): add fortran
+	* tests/fortran.sh: 
+	* tests/fortran.f: example.
+
+	* configure.ac: 0.4
+
+2005-06-03  Junichi Uekawa  <dancer@debian.org>
+
+	* binfmtc-interpreter.c: properly use daemon
+
 2005-05-24  Junichi Uekawa  <dancer@debian.org>
 
 	* configure.ac: 0.3
 	
 	* debian/binfmtc.postinst: update
 	* debian/binfmtc.postrm: update
-	
 	* debian/rules (install): install gcjcompile
-
 	* debian/gcjcompile.binfmts: create
-
 	* binfmtgcj-interpreter.1: create
-
 	* Makefile.am: add java
-
 	* tests/javatest.java: new
-
 	* tests/java.sh: script.
-
 	* binfmtc-lang-gcj.c (default_options): gcj language bindings.
 
 2005-05-13  Junichi Uekawa  <dancer@debian.org>

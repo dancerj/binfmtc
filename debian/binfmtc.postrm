@@ -10,6 +10,10 @@ if [ remove = "$1" -a -x /usr/sbin/update-binfmts ]; then
 	--remove asmassembly /usr/bin/binfmtasm-interpreter
     /usr/sbin/update-binfmts --package binfmtc \
 	--remove gcjcompile /usr/bin/binfmtgcj-interpreter
+    /usr/sbin/update-binfmts --package binfmtc \
+	--remove fcompile /usr/bin/binfmtf-interpreter
+    /usr/sbin/update-binfmts --package binfmtc \
+	--remove pcompile /usr/bin/binfmtp-interpreter
 fi
 
 #DEBHELPER#
