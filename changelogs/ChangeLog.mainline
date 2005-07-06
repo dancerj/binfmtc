@@ -2,6 +2,24 @@
 # arch-tag: automatic-ChangeLog--dancer@netfort.gr.jp--2005-web/binfmtc--mainline--0.1
 #
 
+2005-07-06 22:44:25 GMT	Junichi Uekawa <dancer@netfort.gr.jp>	patch-6
+
+    Summary:
+      add x86 test
+    Revision:
+      binfmtc--mainline--0.1--patch-6
+
+    add x86 test
+    
+
+    new files:
+     tests/.arch-ids/asm-x86.S.id tests/asm-x86.S
+
+    modified files:
+     ChangeLog Makefile.am NEWS changelogs/ChangeLog.mainline
+     configure.ac debian/changelog tests/asm.sh
+
+
 2005-06-04 02:19:38 GMT	Junichi Uekawa (dancer on ibook) <dancer@debian.org>	patch-5
 
     Summary:

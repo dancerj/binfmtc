@@ -1,3 +1,9 @@
+binfmtc (0.6-1) UNRELEASED; urgency=low
+
+  * New upstream version
+
+ -- Junichi Uekawa <dancer@debian.org>  Sun, 19 Jun 2005 08:57:32 +0900
+
 binfmtc (0.5-1) UNRELEASED; urgency=low
 
   * New upstream version

@@ -1,3 +1,11 @@
+2005-06-19  Junichi Uekawa  <dancer@debian.org>
+
+	* NEWS: update
+	* configure.ac: 0.6
+	* Makefile.am:
+	* tests/asm.sh: 
+	* tests/asm-x86.S: add x86 implementation.
+
 2005-06-04  Junichi Uekawa  <dancer@debian.org>
 
 	* configure.ac: 0.5

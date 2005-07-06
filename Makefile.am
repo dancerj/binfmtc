@@ -44,6 +44,7 @@ EXTRA_DIST= autogen.sh init.sh unreg.sh \
 	tests/wrongcode.c \
 	tests/wrongmagic.c \
 	tests/asm-ppc.S \
+	tests/asm-x86.S \
 	tests/cxxprint.cxx  \
 	tests/javatest.java  \
 	tests/fortran.f  \
