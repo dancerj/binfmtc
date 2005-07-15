@@ -28,16 +28,53 @@ exit 1
 #include <readline.h>
 #include <history.h>
 
+typedef struct defs_list
+{
+  struct defs_list* next;
+  char* s;
+} * defsp;
+
+
+defsp add_string(defsp orig, const char* newstr)
+{
+  defsp t = malloc(sizeof(struct defs_list));
+  t->next=orig;
+  t->s=strdup(newstr);
+  return t;
+}
+
 int main(int argc, char** argv)
 {
   char * str = NULL;
   char * tempfilename = NULL;
   FILE * f;
   int fd;
+  defsp t, defs=NULL;
   
+  defs=add_string(defs, "#include <stdlib.h>");
+  defs=add_string(defs, "#include <unistd.h>");
+  defs=add_string(defs, "#include <stdio.h>");
+
   while (NULL!=(str = readline("REAL csh: ")))
     {
+      if (*str=='\0')		/* ignore blanks. */
+	continue;
       add_history(str);
+
+      if (*str=='#')
+	{
+	  /* ## debug symbol to dump header file list. */
+	  if (*(str+1)=='#')
+	    {
+	      for (t=defs; t; t=t->next)
+		{
+		  printf("%s\n", t->s);
+		}
+	      continue;
+	    }
+	  defs=add_string(defs, str);
+	  continue;
+	}
       asprintf(&tempfilename, "%s/realcshXXXXXX",
 	       getenv("BINFMTCTMPDIR")?:
 	       getenv("TMPDIR")?:
@@ -49,10 +86,12 @@ int main(int argc, char** argv)
       
       fprintf(f, 
 	      "/*BINFMTC:\n"
-	      "*/\n"
-	      "#include <stdlib.h>\n"
-	      "#include <unistd.h>\n"
-	      "#include <stdio.h>\n"
+	      "*/\n");
+      for (t=defs; t; t=t->next)
+	{
+	  fprintf(f, "%s\n", t->s);
+	}
+      fprintf(f, 
 	      "int main(int argc, char ** argv)\n"
 	      "{\n"
 	      "%s;\n"

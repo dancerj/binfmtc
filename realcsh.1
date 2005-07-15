@@ -10,6 +10,17 @@ A line of input is handled as a line in
 .B "main()"
 function, and the resulting C code is compiled, and executed.
 
+If a line starting with
+.B "#"
+such as 
+.B "#include <stdio.h>"
+is entered, it is added to every code after that
+at the start of sourcecode.
+
+The list of such lines can be seen with
+.B "##"
+
+
 .SH "EXAMPLES"
 
 The following is an example session

@@ -2,6 +2,52 @@
 # arch-tag: automatic-ChangeLog--dancer@ibookg4.dancer.netfort.gr.jp--2005/binfmtc--mainline--0.1
 #
 
+2005-07-15 11:05:13 GMT	Junichi Uekawa (dancer on ibook) <dancer@debian.org>	patch-33
+
+    Summary:
+      cprintf.c is done
+    Revision:
+      binfmtc--mainline--0.1--patch-33
+
+    cprintf.c is done
+    
+
+    modified files:
+     ChangeLog changelogs/ChangeLog.ibook-dancer realcsh.1
+     realcsh.c
+
+
+2005-07-06 22:45:12 GMT	Junichi Uekawa (dancer on ibook) <dancer@debian.org>	patch-32
+
+    Summary:
+      merge work done in web/atoron
+    Revision:
+      binfmtc--mainline--0.1--patch-32
+
+    merge work done in web/atoron
+    
+    Patches applied:
+    
+     * dancer@netfort.gr.jp--2005-web/binfmtc--mainline--0.1--patch-5
+       merge ibook for 0.4, 0.5 changes 
+    
+     * dancer@netfort.gr.jp--2005-web/binfmtc--mainline--0.1--patch-6
+       add x86 test
+    
+
+    new files:
+     tests/.arch-ids/asm-x86.S.id tests/asm-x86.S
+
+    modified files:
+     ChangeLog Makefile.am NEWS changelogs/ChangeLog.ibook-dancer
+     changelogs/ChangeLog.mainline configure.ac debian/changelog
+     tests/asm.sh
+
+    new patches:
+     dancer@netfort.gr.jp--2005-web/binfmtc--mainline--0.1--patch-5
+     dancer@netfort.gr.jp--2005-web/binfmtc--mainline--0.1--patch-6
+
+
 2005-06-03 21:03:28 GMT	Junichi Uekawa (dancer on ibook) <dancer@debian.org>	patch-31
 
     Summary:

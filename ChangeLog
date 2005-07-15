@@ -1,3 +1,10 @@
+2005-07-15  Junichi Uekawa  <dancer@debian.org>
+
+	* realcsh.1: document.
+
+	* realcsh.c (defs_list): Add implementation for adding include files
+	on the fly.
+
 2005-06-19  Junichi Uekawa  <dancer@debian.org>
 
 	* NEWS: update
