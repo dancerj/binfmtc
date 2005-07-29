@@ -1,3 +1,14 @@
+2005-07-29  Junichi Uekawa  <dancer@debian.org>
+
+	* configure.ac: 0.7
+
+	* README: update
+
+	* Makefile.am (EXTRA_DIST): reflect renames
+
+	* binfmtc-unreg.sh: rename from unreg.sh, and update to current functionality.
+	* binfmtc-init.sh: rename from init.sh
+
 2005-07-15  Junichi Uekawa  <dancer@debian.org>
 
 	* realcsh.1: document.

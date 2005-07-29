@@ -1,7 +1,8 @@
 To run this program first run
    $ ./configure
-   $ make
-   # ./init.sh
+   $ make 
+   # make install
+   # binfmtc-init.sh
 
 You will then be able to run C programs as a script.
 Run the following to make sure you have a somewhat working system.

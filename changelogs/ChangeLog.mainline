@@ -2,6 +2,32 @@
 # arch-tag: automatic-ChangeLog--dancer@netfort.gr.jp--2005-web/binfmtc--mainline--0.1
 #
 
+2005-07-29 13:09:54 GMT	Junichi Uekawa <dancer@netfort.gr.jp>	patch-8
+
+    Summary:
+      prepare for public release, make it usable
+    Revision:
+      binfmtc--mainline--0.1--patch-8
+
+    prepare for public release, make it usable
+    
+
+    modified files:
+     ChangeLog Makefile.am NEWS README binfmtc-init.sh
+     binfmtc-unreg.sh changelogs/ChangeLog.mainline configure.ac
+     debian/changelog
+
+    renamed files:
+     .arch-ids/init.sh.id
+       ==> .arch-ids/binfmtc-init.sh.id
+     .arch-ids/unreg.sh.id
+       ==> .arch-ids/binfmtc-unreg.sh.id
+     init.sh
+       ==> binfmtc-init.sh
+     unreg.sh
+       ==> binfmtc-unreg.sh
+
+
 2005-07-15 13:10:34 GMT	Junichi Uekawa (dancer on ibook) <dancer@debian.org>	patch-7
 
     Summary:

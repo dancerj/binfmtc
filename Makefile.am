@@ -36,7 +36,7 @@ TESTS_ENVIRONMENT=bindir=$(bindir) \
 	LANG=C \
 	VERSION=@VERSION@ 
 
-EXTRA_DIST= autogen.sh init.sh unreg.sh \
+EXTRA_DIST= autogen.sh binfmtc-init.sh binfmtc-unreg.sh \
 	$(TESTS) \
 	tests/multisource.c \
 	tests/multisource1.c \
@@ -52,6 +52,16 @@ EXTRA_DIST= autogen.sh init.sh unreg.sh \
 	upaccho2/upaccho2.c \
 	upaccho2/upaccho2-webservice.c \
 	upaccho2/upaccho2-webservice.h
+
+install-exec-local:
+	-mkdir -p ${DESTDIR}${sbindir}
+	sed -e "s,[@]bindir[@],@bindir@,g" < ${srcdir}/binfmtc-unreg.sh > ${DESTDIR}${sbindir}/binfmtc-unreg.sh
+	sed -e "s,[@]bindir[@],@bindir@,g" < ${srcdir}/binfmtc-init.sh > ${DESTDIR}${sbindir}/binfmtc-init.sh
+	chmod 755 ${DESTDIR}${sbindir}/binfmtc-unreg.sh
+	chmod 755 ${DESTDIR}${sbindir}/binfmtc-init.sh
+
+uninstall-local:
+	rm -f ${DESTDIR}${sbindir}/binfmtc-unreg.sh ${DESTDIR}${sbindir}/binfmtc-init.sh
 
 # Make debian pristine-source
 ../@PACKAGE@_@VERSION@.orig.tar.gz: 
