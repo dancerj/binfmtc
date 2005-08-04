@@ -1,3 +1,15 @@
+2005-08-04  Junichi Uekawa  <dancer@debian.org>
+
+	* Makefile.am (dist_man_MANS): rename realcsh.1 -> realcsh.c.1
+
+	* realcsh.c.1: rename
+
+	* configure.ac: update.
+
+	* NEWS: update news.
+
+	* binfmtc-interpreter.c: fix up const/non-const issues, and free some variables.
+
 2005-07-29  Junichi Uekawa  <dancer@debian.org>
 
 	* configure.ac: 0.7

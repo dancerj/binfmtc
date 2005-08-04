@@ -26,7 +26,7 @@ TESTS= tests/prerequisite.sh \
 	tests/asm.sh \
 	tests/news-okay.sh
 
-dist_man_MANS= binfmtc-interpreter.1 binfmtcxx-interpreter.1 realcsh.1 binfmtasm-interpreter.1 \
+dist_man_MANS= binfmtc-interpreter.1 binfmtcxx-interpreter.1 realcsh.c.1 binfmtasm-interpreter.1 \
 	binfmtf-interpreter.1 \
 	binfmtp-interpreter.1 \
 	binfmtgcj-interpreter.1

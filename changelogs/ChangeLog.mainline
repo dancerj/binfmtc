@@ -2,6 +2,27 @@
 # arch-tag: automatic-ChangeLog--dancer@netfort.gr.jp--2005-web/binfmtc--mainline--0.1
 #
 
+2005-08-04 00:15:56 GMT	Junichi Uekawa <dancer@netfort.gr.jp>	patch-9
+
+    Summary:
+      update
+    Revision:
+      binfmtc--mainline--0.1--patch-9
+
+    update
+    
+
+    modified files:
+     ChangeLog Makefile.am NEWS binfmtc-interpreter.c
+     changelogs/ChangeLog.mainline configure.ac
+
+    renamed files:
+     .arch-ids/realcsh.1.id
+       ==> .arch-ids/realcsh.c.1.id
+     realcsh.1
+       ==> realcsh.c.1
+
+
 2005-07-29 13:09:54 GMT	Junichi Uekawa <dancer@netfort.gr.jp>	patch-8
 
     Summary:

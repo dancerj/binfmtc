@@ -1,3 +1,7 @@
+0.7.arch.1 4 Aug 2005
+
+! Add clean-up and error checking.
+
 0.7 29 Jul 2005
 
 + Update binfmtc-init.sh and binfmtc-unreg.sh

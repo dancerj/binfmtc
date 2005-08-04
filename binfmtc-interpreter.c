@@ -31,7 +31,7 @@
 #define BINFMTC_MAGIC_LEN strlen(binfmtc_magic)
 #define BINFMTC_DEBUG (getenv("BINFMTC_DEBUG"))
 
-const char* compile_source(const char *sourcename)
+char* compile_source(const char *sourcename)
 {
   char* origdir = getcwd(NULL, 0);
   char* path = strdup (sourcename);
@@ -137,7 +137,11 @@ const char* compile_source(const char *sourcename)
       unlink(tempfilename);
       return NULL;
     }
-    
+
+  free(origdir);
+  free(path);
+  free(s);
+  free(gcccommandline);
   return tempfilename;
 }
 
@@ -184,7 +188,7 @@ int exec_prog(const char * filename, int argc, char**argv)
 
 int main(int argc, char**argv)
 {
-  const char* filename=NULL;
+  char* filename=NULL;
   int exit_code = EXIT_FAILURE;
   if (argc < 2)
     {
