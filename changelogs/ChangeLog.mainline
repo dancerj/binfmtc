@@ -2,6 +2,24 @@
 # arch-tag: automatic-ChangeLog--dancer@netfort.gr.jp--2005-web/binfmtc--mainline--0.1
 #
 
+2005-08-30 00:09:55 GMT	Junichi Uekawa <dancer@netfort.gr.jp>	patch-10
+
+    Summary:
+      release 0.8 for Debian.
+    Revision:
+      binfmtc--mainline--0.1--patch-10
+
+    	* debian/control (Suggests): libgcj4-dev -> libgcj6-dev
+    
+    	* NEWS: 0.8 release.
+    
+    	* configure.ac: 0.8
+
+    modified files:
+     ChangeLog NEWS changelogs/ChangeLog.mainline configure.ac
+     debian/changelog debian/control debian/rules
+
+
 2005-08-04 00:15:56 GMT	Junichi Uekawa <dancer@netfort.gr.jp>	patch-9
 
     Summary:

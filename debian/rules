@@ -50,6 +50,9 @@ install: build
 	dh_clean -k
 	dh_installdirs
 	$(MAKE) install DESTDIR=$(CURDIR)/debian/binfmtc
+	-rm $(CURDIR)/debian/binfmtc/usr/sbin/binfmtc-init.sh
+	-rm $(CURDIR)/debian/binfmtc/usr/sbin/binfmtc-unreg.sh
+
 	for A in ccompile cxxcompile asmassembly gcjcompile fcompile pcompile; do \
 		$(INSTALL_FILE) debian/$$A.binfmts $(CURDIR)/debian/binfmtc/usr/share/binfmts/$$A ; \
 		done

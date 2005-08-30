@@ -1,3 +1,10 @@
+binfmtc (0.8-1) unstable; urgency=low
+
+  * New upstream version
+  * Initial upload (closes: #325371)
+
+ -- Junichi Uekawa <dancer@debian.org>  Tue, 30 Aug 2005 09:04:13 +0900
+
 binfmtc (0.7-1) UNRELEASED; urgency=low
 
   * New upstream version

@@ -1,3 +1,11 @@
+2005-08-30  Junichi Uekawa  <dancer@debian.org>
+
+	* debian/control (Suggests): libgcj4-dev -> libgcj6-dev
+
+	* NEWS: 0.8 release.
+
+	* configure.ac: 0.8
+
 2005-08-04  Junichi Uekawa  <dancer@debian.org>
 
 	* Makefile.am (dist_man_MANS): rename realcsh.1 -> realcsh.c.1
