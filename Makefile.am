@@ -45,6 +45,7 @@ EXTRA_DIST= autogen.sh binfmtc-init.sh binfmtc-unreg.sh \
 	tests/wrongmagic.c \
 	tests/asm-ppc.S \
 	tests/asm-x86.S \
+	tests/asm-x86_64.S \
 	tests/cxxprint.cxx  \
 	tests/javatest.java  \
 	tests/fortran.f  \

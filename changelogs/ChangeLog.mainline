@@ -2,6 +2,24 @@
 # arch-tag: automatic-ChangeLog--dancer@netfort.gr.jp--2005-web/binfmtc--mainline--0.1
 #
 
+2005-11-08 23:48:26 GMT	Junichi Uekawa <dancer@debian.org>	patch-11
+
+    Summary:
+      add assembly testsuite for x86_64
+    Revision:
+      binfmtc--mainline--0.1--patch-11
+
+    add assembly testsuite for x86_64
+    
+
+    new files:
+     tests/.arch-ids/asm-x86_64.S.id tests/asm-x86_64.S
+
+    modified files:
+     ChangeLog Makefile.am NEWS changelogs/ChangeLog.mainline
+     configure.ac debian/changelog tests/asm.sh
+
+
 2005-08-30 00:09:55 GMT	Junichi Uekawa <dancer@netfort.gr.jp>	patch-10
 
     Summary:

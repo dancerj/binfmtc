@@ -1,3 +1,7 @@
+0.8.cvs.1 9 Nov 2005
+
++ add testsuite for amd64 assembly
+
 0.8 30 Aug 2005
 
 ! Add clean-up and error checking.

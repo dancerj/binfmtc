@@ -1,3 +1,9 @@
+binfmtc (0.8.cvs.1) UNRELEASED; urgency=low
+
+  * New upstream release
+
+ -- Junichi Uekawa <dancer@debian.org>  Wed,  9 Nov 2005 08:34:06 +0900
+
 binfmtc (0.8-1) unstable; urgency=low
 
   * New upstream version

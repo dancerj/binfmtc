@@ -1,3 +1,12 @@
+2005-11-09  Junichi Uekawa  <dancer@debian.org>
+
+	* configure.ac: 0.8.1
+
+	* NEWS: 
+	* Makefile.am (EXTRA_DIST): 
+	* tests/asm.sh: 
+	* tests/asm-x86_64.S (main): add test for amd64
+
 2005-08-30  Junichi Uekawa  <dancer@debian.org>
 
 	* debian/control (Suggests): libgcj4-dev -> libgcj6-dev
