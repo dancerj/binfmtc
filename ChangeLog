@@ -1,6 +1,7 @@
 2005-11-09  Junichi Uekawa  <dancer@debian.org>
 
-	* configure.ac: 0.8.1
+	* configure.ac: 
+	* NEWS: 0.9
 
 	* NEWS: 
 	* Makefile.am (EXTRA_DIST): 
