@@ -2,6 +2,20 @@
 # arch-tag: automatic-ChangeLog--dancer@netfort.gr.jp--2005-web/binfmtc--mainline--0.1
 #
 
+2005-11-20 15:57:35 GMT	Junichi Uekawa (dancer on ibook) <dancer@debian.org>	patch-13
+
+    Summary:
+      update ppc asm for better implementation
+    Revision:
+      binfmtc--mainline--0.1--patch-13
+
+    update ppc asm for better implementation
+    
+
+    modified files:
+     ChangeLog changelogs/ChangeLog.mainline tests/asm-ppc.S
+
+
 2005-11-12 02:52:55 GMT	Junichi Uekawa <dancer@debian.org>	patch-12
 
     Summary:
