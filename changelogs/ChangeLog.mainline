@@ -2,6 +2,23 @@
 # arch-tag: automatic-ChangeLog--dancer@netfort.gr.jp--2005-web/binfmtc--mainline--0.1
 #
 
+2005-12-31 15:24:33 GMT	Junichi Uekawa (dancer on ibook) <dancer@debian.org>	patch-14
+
+    Summary:
+      add realksh
+    Revision:
+      binfmtc--mainline--0.1--patch-14
+
+    add realksh
+    
+
+    new files:
+     .arch-ids/realksh.c.id realksh.c
+
+    modified files:
+     ChangeLog changelogs/ChangeLog.mainline
+
+
 2005-11-20 15:57:35 GMT	Junichi Uekawa (dancer on ibook) <dancer@debian.org>	patch-13
 
     Summary:
