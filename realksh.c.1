@@ -1,0 +1,76 @@
+.TH "realksh" 1 "2006 Jan 1" "binfmt_misc Dancer" "binfmt_C"
+.SH "NAME"
+realksh.c \- A shell for running Kernel-mode C code
+.SH "SYNOPSIS"
+.BI "realksh.c "
+.SH "DESCRIPTION"
+.B "realksh.c"
+is an interactive shell that runs C source code.
+A line of input is handled as a line in
+.B "module_init()"
+function, and the resulting C code is compiled to build a kernel module.
+The module is then inserted into the kernel, and removed from the kernel.
+dmesg output is echoed to stdout in real-time for convenience.
+
+If a line starting with
+.B "#"
+such as 
+.B "#include <stdio.h>"
+is entered, it is added to every code after that
+at the start of sourcecode.
+
+The list of such lines can be seen with
+.B "##"
+
+.SH "EXAMPLES"
+
+The following is an example session
+
+.nf
+$ sudo ./realksh.c
+REAL ksh: printk ("hello\\n");
+  Building modules, stage 2.
+KMSG: <4>hello
+
+REAL ksh: printk ("%x\\n", mfmsr());
+  Building modules, stage 2.
+KMSG: <4>9032
+
+REAL ksh: printk ("%x\\n", mfspr(SPRN_MMCR0));
+  Building modules, stage 2.
+KMSG: <4>0
+
+REAL ksh:
+
+.hy
+
+.SH "INTERNALS" 
+The following is how the C code looks like.
+
+.nf
+#include <linux/module.h>
+#include <linux/init.h>
+MODULE_AUTHOR("dancerj");
+MODULE_DESCRIPTION("....");
+MODULE_LICENSE("GPL");
+static int __init realkshmod2_init(void)
+{
+.I "input-line"
+return 0; 
+}
+static void __exit realkshmod2_cleanup(void)
+{
+}
+module_init(realkshmod2_init);
+module_exit(realkshmod2_cleanup);
+.hy
+
+.SH "AUTHOR"
+Junichi Uekawa (dancer@debian.org)
+
+Upstream page is available at 
+.B "http://www.netfort.gr.jp/~dancer/software/"
+
+.SH "SEE ALSO"
+.BR "binfmtc-interpreter" "(1)," 
+.BR "realcsh.c" "(1)" 

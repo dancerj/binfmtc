@@ -1,5 +1,13 @@
 2006-01-01  Junichi Uekawa  <dancer@debian.org>
 
+	* NEWS: note that realksh.c is added
+
+	* configure.ac: update to revision 0.9.X
+
+	* realksh.c.1: created
+
+	* Makefile.am: updated makefile.
+
 	* realksh.c: sample program to do kernel shell.
 
 2005-11-18  Junichi Uekawa  <dancer@debian.org>

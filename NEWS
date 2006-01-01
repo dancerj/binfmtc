@@ -1,3 +1,7 @@
+0.9.X 1 Jan 2006
+
++ add realksh.c sample program for kernel shell.
+
 0.9 9 Nov 2005
 
 + add testsuite for amd64 assembly
