@@ -1,3 +1,25 @@
+2006-01-02  Junichi Uekawa  <dancer@debian.org>
+
+	* tests/prerequisite.sh: update the test so that more things are
+	tested here. If this test fails we know some essential something
+	is missing, and further tests may fail.
+
+	* debian/control (Description): update description to contain the
+	full list of things that are really supported.
+
+	* tests/realcsh.sh: test for realcsh functionality.
+
+	* Makefile.am (TESTS): add test for realcsh.
+
+	* realksh.c.1 (KMSG): update document to document that KMSG: is
+	the prefix used for dmesg output
+
+	* Makefile.am (TESTS): add test for realksh.
+
+	* tests/realksh.sh: implement a test for realksh.
+
+	* realksh.c: reorganize code a bit.
+
 2006-01-01  Junichi Uekawa  <dancer@debian.org>
 
 	* NEWS: note that realksh.c is added

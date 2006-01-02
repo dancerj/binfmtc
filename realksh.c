@@ -18,7 +18,8 @@ exit 1
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
- * test program: Real C shell implemented in binfmtc.
+ * Real K shell implemented in binfmtc.
+ *
  *
  * M-x compile:
  * gcc -S -c realksh.c -I /usr/include/readline -Wall -O2 
@@ -37,6 +38,8 @@ exit 1
 #include <fcntl.h>
 #include <signal.h>
 
+#define PRGNAME "realksh"
+
 typedef struct defs_list
 {
   struct defs_list* next;
@@ -52,6 +55,7 @@ defsp add_string(defsp orig, const char* newstr)
   return t;
 }
 
+/* return the child process's pid */
 pid_t kmsgloop(void)
 {
   /* do a loop looking at kmsg
@@ -60,11 +64,11 @@ pid_t kmsgloop(void)
   int f;
   int cnt;
   pid_t p;
-  
-
-  if (!(p=fork()))
+  char log_buffer[1024];
+      
+  switch (p=fork())
     {
-      char log_buffer[1024];
+    case 0:
       if (-1==(f=open("/proc/kmsg", O_RDONLY)))
 	{
 	  perror("open: /proc/kmsg cannot be opened, you won't see dmesg");
@@ -77,11 +81,42 @@ pid_t kmsgloop(void)
 	  write(1, log_buffer, cnt);
 	  write(1, "\n:", 1);
 	}
-      perror("read: /proc/kmsg handling failed");
+      perror(PRGNAME": read: /proc/kmsg handling failed");
       exit (1);
+    case -1:
+      perror(PRGNAME": fork");
+      exit (1);
+      
+    default:
+      /* Parent process, won't do much here. */
+      break;
     }
   return p;
 }
+
+/* 
+   get the path to kernel build directory from /lib/modules/KVER/build/
+
+   return NULL on failure.
+*/
+char* get_kerneldirname(void)
+  {
+    struct utsname u;
+    char* kerneldirname;
+    
+    if (-1==uname (&u))
+      {
+	perror(PRGNAME": uname");
+	return NULL;
+      }
+    if (asprintf (&kerneldirname, "/lib/modules/%s/build", 
+		  u.release)<0)
+      {
+	fprintf(stderr, PRGNAME ": asprintf failed\n");
+	return NULL;      
+      }
+    return kerneldirname;
+  }
 
 int main(int argc, char** argv)
 {
@@ -94,8 +129,8 @@ int main(int argc, char** argv)
   char * kbuildfilename = NULL;
 
   /* the descriptions can be anything, since we aren't really using it for anything important */
-  const char* module_author = "dancerj";
-  const char* module_description = "...." ;
+  const char* module_author = "joe random realksh user";
+  const char* module_description = "auto-generated code fromm realksh.c" ;
   const char* module_license = "GPL" ;
 
   /* the name should not
@@ -118,28 +153,31 @@ int main(int argc, char** argv)
   defs=add_string(defs, "#include <linux/init.h>");
   defs=add_string(defs, "#include <linux/module.h>");
   
-  /* fork a process to output dmesg.
+  /* 
+     fork a process to output dmesg.
    */
   p=kmsgloop();
 
-  /* 
-     get the path to kernel build directory from /lib/modules/KVER/build/
-   */
-  {
-    struct utsname u;
-    uname (&u);
-    asprintf (&kerneldirname, "/lib/modules/%s/build", 
-	      u.release);
-  }
+  if (!(kerneldirname=get_kerneldirname()))
+    return 1;
 
   /* prepare module build directory */
-  asprintf(&tempdirname, "%s/realkshXXXXXX",
+  if (asprintf(&tempdirname, "%s/realkshXXXXXX",
 	   getenv("BINFMTCTMPDIR")?:
 	   getenv("TMPDIR")?:
 	   getenv("TEMPDIR")?:
 	   "/tmp"
-	   );
-  mkdtemp(tempdirname);
+	   )<0)
+    {
+      fprintf(stderr, PRGNAME ": asprintf failed\n");
+      return 1;      
+    }
+  if (!mkdtemp(tempdirname))
+    {
+      perror (PRGNAME": mkdtemp");
+      return 1;
+    }
+  
   asprintf(&kbuildfilename, "%s/Kbuild",
 	   tempdirname);
   asprintf(&tempfilename, "%s/%s-main.c",
@@ -151,10 +189,16 @@ int main(int argc, char** argv)
 	  modulename, 
 	  modulename, modulename);
   fclose(f);
-  
+
+  /* check that I have root permissions.
+     insmod/rmmod, and /proc/kmsg requires root.
+
+     You shoulnd't be running this code on a production system, or
+     you're pretty much already screwed anyway
+   */
   if (getuid()!=0)
     {
-      fprintf(stderr, "Warning: root privilege is probably required for most operation\n");
+      fprintf(stderr, PRGNAME ": Warning: root privilege is probably required for most operation\n");
     }
 
   while (NULL!=(str = readline("REAL ksh: ")))
@@ -187,7 +231,6 @@ int main(int argc, char** argv)
 	 creation of module source-code to be processed
        */
       f=fopen(tempfilename, "w");
-      chmod(tempfilename, 0700);
       for (t=defs; t; t=t->next)
 	{
 	  fprintf(f, "%s\n", t->s);
@@ -224,7 +267,10 @@ int main(int argc, char** argv)
 	       tempdirname, modulename);
       if ((ret=system (commandline)))
 	{
-	  fprintf(stderr, "non-zero return code from make/exec command: %i\n", ret);
+	  fprintf(stderr, 
+		  PRGNAME
+		  ": non-zero return code from make/exec command: %i: %s\n", 
+		  ret, commandline);
 	}
       free(commandline);
 
@@ -233,7 +279,10 @@ int main(int argc, char** argv)
 	       "rmmod %s.ko",
 	       modulename
 	       );
-      system (commandline);
+      if ((ret=system (commandline)))
+	{
+	  fprintf(stderr, PRGNAME ": non-zero return code from rmmod: %i\n", ret);
+	}
       free(commandline);
       free(str);
     }
@@ -245,14 +294,22 @@ int main(int argc, char** argv)
   asprintf(&commandline, 
 	   "make -s -C \"%s\" M=\"%s\" clean ",
 	   kerneldirname, tempdirname);
-  system(commandline);
-  unlink (tempfilename);
-  unlink (kbuildfilename);
-  rmdir (tempdirname);
+  if (system(commandline))
+    {
+      fprintf(stderr, PRGNAME ": Warning: Failed execution: %s\n", 
+	      commandline);
+    }
+  
+  if ((-1==unlink (kbuildfilename)))
+    perror (PRGNAME": unlink of temporary Kconfig file failed");
+  unlink (tempfilename);	/* this may or may not exist */
+  if (-1==rmdir (tempdirname))
+    perror (PRGNAME": rmdir of temporary dir failed");
 
+  /* clean up the process */
   kill(p, SIGTERM);
   if (-1==waitpid(p, NULL, 0))
-    perror("waitpid");
+    perror(PRGNAME": waitpid");
 
   return 0;
 }

@@ -3,4 +3,5 @@
 
 set -e 
 
-${srcdir}/tests/pascal.pas
+${srcdir}/tests/pascal.pas | grep "Hello"
+

@@ -1,6 +1,8 @@
 0.9.X 1 Jan 2006
 
 + add realksh.c sample program for kernel shell.
++ add a testsuite for realksh. 
+  It's sometimes risky to run this on production kernels, beware.
 
 0.9 9 Nov 2005
 

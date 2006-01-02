@@ -10,7 +10,11 @@ Architecture: any
 Depends: ${shlibs:Depends}, gcc, binutils, g++, binfmt-support
 Suggests: g77, gcj, libgcj6-dev, gpc
 Description: Execute C program as script
- Linux binfmt_misc handler for C, C++, Assembly languages.
+ Linux binfmt_misc handler for C, C++, Assembly languages, Pascal,
+ Fortran, Java(GCJ).
  .
  Using the binfmt_misc interface, binfmtc allows users to 
  seamlessly execute C source code as if they were scripts.
+ .
+ Includes example utilities realcsh.c, realksh.c, which are for your
+ real C scripting pleasures.

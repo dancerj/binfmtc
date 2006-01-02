@@ -10,7 +10,11 @@ A line of input is handled as a line in
 .B "module_init()"
 function, and the resulting C code is compiled to build a kernel module.
 The module is then inserted into the kernel, and removed from the kernel.
-dmesg output is echoed to stdout in real-time for convenience.
+kernel message output prepended with 
+.B "KMSG: "
+is copied to standard out for convenience, so that functions like 
+.B "printk"
+can be used for easy debugging.
 
 If a line starting with
 .B "#"

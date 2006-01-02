@@ -2,6 +2,27 @@
 # arch-tag: automatic-ChangeLog--dancer@netfort.gr.jp--2005-web/binfmtc--mainline--0.1
 #
 
+2006-01-02 13:44:33 GMT	Junichi Uekawa (dancer on ibook) <dancer@debian.org>	patch-16
+
+    Summary:
+      improve realksh and install tests etc.
+    Revision:
+      binfmtc--mainline--0.1--patch-16
+
+    improve realksh and install tests etc.
+    
+
+    new files:
+     tests/.arch-ids/realcsh.sh.id tests/.arch-ids/realksh.sh.id
+     tests/realcsh.sh tests/realksh.sh
+
+    modified files:
+     ChangeLog Makefile.am NEWS changelogs/ChangeLog.mainline
+     debian/changelog debian/control debian/rules realksh.c
+     realksh.c.1 tests/fortran.sh tests/pascal.sh
+     tests/prerequisite.sh
+
+
 2006-01-01 01:27:50 GMT	Junichi Uekawa (dancer on ibook) <dancer@debian.org>	patch-15
 
     Summary:

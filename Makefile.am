@@ -25,6 +25,8 @@ TESTS= tests/prerequisite.sh \
 	tests/fortran.sh \
 	tests/space.sh \
 	tests/asm.sh \
+	tests/realksh.sh \
+	tests/realcsh.sh \
 	tests/news-okay.sh
 
 dist_man_MANS= binfmtc-interpreter.1 binfmtcxx-interpreter.1 realcsh.c.1 binfmtasm-interpreter.1 \
