@@ -47,6 +47,10 @@ typedef struct defs_list
 } * defsp;
 
 
+/* 
+   Add a new string to list of "#" lines.
+   #include, #define etc.
+ */
 defsp add_string(defsp orig, const char* newstr)
 {
   defsp t = malloc(sizeof(struct defs_list));
@@ -55,7 +59,11 @@ defsp add_string(defsp orig, const char* newstr)
   return t;
 }
 
-/* return the child process's pid */
+/* 
+   fork a process that dumps dmesg (proc/kmsg) to stdout.
+
+   return the process's pid
+ */
 pid_t kmsgloop(void)
 {
   /* do a loop looking at kmsg
@@ -141,11 +149,11 @@ int main(int argc, char** argv)
   defsp t, defs=NULL;
   pid_t p;
   
-  /* initialize the header file list.
-     This is the minimal list that would enable 
-     some useful module loading to be done.
+  /* 
+     initialize the header file list.  This is the minimal list that
+     would enable basic module functionality.
      
-     It also allows most kernel operations, like
+     This list also happens to allow most kernel operations, like
      printk, and mfspr (ppc) etc.
      
      Add lines here to improve default for your liking.
@@ -158,10 +166,11 @@ int main(int argc, char** argv)
    */
   p=kmsgloop();
 
+  /* obtain the kernel build directory */
   if (!(kerneldirname=get_kerneldirname()))
     return 1;
 
-  /* prepare module build directory */
+  /* prepare the temporary module build directory */
   if (asprintf(&tempdirname, "%s/realkshXXXXXX",
 	   getenv("BINFMTCTMPDIR")?:
 	   getenv("TMPDIR")?:
@@ -190,7 +199,8 @@ int main(int argc, char** argv)
 	  modulename, modulename);
   fclose(f);
 
-  /* check that I have root permissions.
+  /* 
+     check that I have root permissions.
      insmod/rmmod, and /proc/kmsg requires root.
 
      You shoulnd't be running this code on a production system, or
@@ -201,6 +211,10 @@ int main(int argc, char** argv)
       fprintf(stderr, PRGNAME ": Warning: root privilege is probably required for most operation\n");
     }
 
+
+  /* 
+     The main interactive command loop.
+  */
   while (NULL!=(str = readline("REAL ksh: ")))
     {
       if (*str=='\0')		/* ignore blanks lines, they clutter history. */
@@ -313,4 +327,3 @@ int main(int argc, char** argv)
 
   return 0;
 }
-
