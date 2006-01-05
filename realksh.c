@@ -315,7 +315,7 @@ int main(int argc, char** argv)
     }
   
   if ((-1==unlink (kbuildfilename)))
-    perror (PRGNAME": unlink of temporary Kconfig file failed");
+    perror (PRGNAME": unlink of temporary Kbuild file failed");
   unlink (tempfilename);	/* this may or may not exist */
   if (-1==rmdir (tempdirname))
     perror (PRGNAME": rmdir of temporary dir failed");

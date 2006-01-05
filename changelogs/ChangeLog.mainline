@@ -2,6 +2,20 @@
 # arch-tag: automatic-ChangeLog--dancer@netfort.gr.jp--2005-web/binfmtc--mainline--0.1
 #
 
+2006-01-05 01:53:05 GMT	Junichi Uekawa <dancer@debian.org>	patch-18
+
+    Summary:
+      s/Kconfig/Kbuild
+    Revision:
+      binfmtc--mainline--0.1--patch-18
+
+    s/Kconfig/Kbuild
+    
+
+    modified files:
+     changelogs/ChangeLog.mainline realksh.c
+
+
 2006-01-04 15:19:52 GMT	Junichi Uekawa (dancer on ibook) <dancer@debian.org>	patch-17
 
     Summary:
