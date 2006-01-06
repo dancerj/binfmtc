@@ -2,6 +2,27 @@
 # arch-tag: automatic-ChangeLog--dancer@netfort.gr.jp--2005-web/binfmtc--mainline--0.1
 #
 
+2006-01-06 11:24:35 GMT	Junichi Uekawa <dancer@debian.org>	patch-19
+
+    Summary:
+      release 0.10
+    Revision:
+      binfmtc--mainline--0.1--patch-19
+
+    release 0.10
+    
+
+    modified files:
+     ChangeLog Makefile.am NEWS changelogs/ChangeLog.mainline
+     configure.ac debian/changelog debian/dirs realksh.c.8
+
+    renamed files:
+     .arch-ids/realksh.c.1.id
+       ==> .arch-ids/realksh.c.8.id
+     realksh.c.1
+       ==> realksh.c.8
+
+
 2006-01-05 01:53:05 GMT	Junichi Uekawa <dancer@debian.org>	patch-18
 
     Summary:

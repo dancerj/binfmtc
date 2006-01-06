@@ -1,10 +1,11 @@
-binfmtc (0.9-2) UNRELEASED; urgency=low
+binfmtc (0.10-1) unstable; urgency=low
 
-  * add realksh.c sample program for kernel shell.
-  * don't run make check in debian/rules, since it's risky, and will
+  * New upstream version
+  - add realksh.c sample program for kernel shell.
+  - don't run make check in debian/rules, since it's risky, and will
     always fail since it requires a system binfmtc installed.
 
- -- Junichi Uekawa <dancer@debian.org>  Mon,  2 Jan 2006 17:11:16 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Fri,  6 Jan 2006 20:08:34 +0900
 
 binfmtc (0.9-1) unstable; urgency=low
 

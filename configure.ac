@@ -1,6 +1,6 @@
 dnl Process this file with autoconf to produce a configure script.
 
-m4_define(BINFMTCVERSION,0.9.X)
+m4_define(BINFMTCVERSION,0.10)
 AC_INIT(binfmtc, BINFMTCVERSION)
 AM_INIT_AUTOMAKE(binfmtc, BINFMTCVERSION)
 AM_CONFIG_HEADER(config.h)

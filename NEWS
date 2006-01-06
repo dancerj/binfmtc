@@ -1,4 +1,4 @@
-0.9.X 1 Jan 2006
+0.10 6 Jan 2006
 
 + add realksh.c sample program for kernel shell.
 + add a testsuite for realksh. 

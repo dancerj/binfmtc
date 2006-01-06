@@ -1,3 +1,14 @@
+2006-01-06  Junichi Uekawa  <dancer@debian.org>
+
+	* NEWS: 0.10 release
+
+	* configure.ac: 0.10 release
+
+	* Makefile.am (dist_sbin_SCRIPTS): make realksh installed in sbin
+	instead of bin
+
+	* realksh.c.8: rename to 8, since it's only executable by root
+
 2006-01-02  Junichi Uekawa  <dancer@debian.org>
 
 	* tests/prerequisite.sh: update the test so that more things are
