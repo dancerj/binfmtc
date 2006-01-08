@@ -1,3 +1,7 @@
+2006-01-08  Junichi Uekawa  <dancer@debian.org>
+
+	* realksh.c (main): add a sched_yield for better timing.
+
 2006-01-06  Junichi Uekawa  <dancer@debian.org>
 
 	* NEWS: 0.10 release

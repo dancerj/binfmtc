@@ -37,6 +37,7 @@ exit 1
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <signal.h>
+#include <sched.h>
 
 #define PRGNAME "realksh"
 
@@ -299,6 +300,9 @@ int main(int argc, char** argv)
 	}
       free(commandline);
       free(str);
+
+      /* yield here, I want output to come out. */
+      sched_yield();
     }
 
   /* After ctrl-D, you will come here, do a clean-up

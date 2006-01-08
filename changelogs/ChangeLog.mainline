@@ -2,6 +2,21 @@
 # arch-tag: automatic-ChangeLog--dancer@netfort.gr.jp--2005-web/binfmtc--mainline--0.1
 #
 
+2006-01-08 04:00:39 GMT	Junichi Uekawa <dancer@debian.org>	patch-20
+
+    Summary:
+      add sched_yield call for better scheduling
+    Revision:
+      binfmtc--mainline--0.1--patch-20
+
+    add sched_yield call for better scheduling
+    
+
+    modified files:
+     ChangeLog NEWS changelogs/ChangeLog.mainline debian/changelog
+     realksh.c
+
+
 2006-01-06 11:24:35 GMT	Junichi Uekawa <dancer@debian.org>	patch-19
 
     Summary:

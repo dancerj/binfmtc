@@ -1,3 +1,9 @@
+binfmtc (0.10-2) UNRELEASED; urgency=low
+
+  * realksh.c: add sched_yield for better behavior.
+
+ -- Junichi Uekawa <dancer@debian.org>  Sun,  8 Jan 2006 12:59:32 +0900
+
 binfmtc (0.10-1) unstable; urgency=low
 
   * New upstream version
