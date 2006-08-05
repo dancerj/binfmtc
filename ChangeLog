@@ -1,3 +1,7 @@
+2006-08-05  Junichi Uekawa  <dancer@debian.org>
+
+	* realksh.c (main): clean up properly.
+
 2006-01-08  Junichi Uekawa  <dancer@debian.org>
 
 	* realksh.c (main): add a sched_yield for better timing.

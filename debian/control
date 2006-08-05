@@ -3,12 +3,12 @@ Section: utils
 Priority: extra
 Maintainer: Junichi Uekawa <dancer@debian.org>
 Build-Depends: debhelper (>> 4.0.0)
-Standards-Version: 3.6.2
+Standards-Version: 3.7.2
 
 Package: binfmtc
 Architecture: any
 Depends: ${shlibs:Depends}, gcc, binutils, g++, binfmt-support
-Suggests: g77, gcj, libgcj7-dev, gpc
+Suggests: g77, gcj, gpc
 Description: Execute C program as script
  Linux binfmt_misc handler for C, C++, Assembly languages, Pascal,
  Fortran, Java(GCJ).

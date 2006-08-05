@@ -1,3 +1,11 @@
+binfmtc (0.11-1) unstable; urgency=low
+
+  * New upstream version
+  * libgcj7-dev is now a dependency of gcj, remove the suggests.
+  * Standards-Version: 3.7.2
+
+ -- Junichi Uekawa <dancer@debian.org>  Sat,  5 Aug 2006 11:50:30 +0900
+
 binfmtc (0.10-2) unstable; urgency=low
 
   * realksh.c: add sched_yield for better behavior.

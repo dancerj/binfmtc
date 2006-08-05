@@ -2,6 +2,21 @@
 # arch-tag: automatic-ChangeLog--dancer@netfort.gr.jp--2005-web/binfmtc--mainline--0.1
 #
 
+2006-08-05 02:52:38 GMT	Junichi Uekawa <dancer@debian.org>	patch-22
+
+    Summary:
+      0.11 release, with clean-up fixing
+    Revision:
+      binfmtc--mainline--0.1--patch-22
+
+    0.11 release, with clean-up fixing
+    
+
+    modified files:
+     ChangeLog NEWS changelogs/ChangeLog.mainline configure.ac
+     debian/changelog debian/control realksh.c tests/realksh.sh
+
+
 2006-05-28 12:29:25 GMT	Junichi Uekawa <dancer@debian.org>	patch-21
 
     Summary:

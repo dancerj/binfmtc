@@ -303,6 +303,7 @@ int main(int argc, char** argv)
 
       /* yield here, I want output to come out. */
       sched_yield();
+      sched_yield();
     }
 
   /* After ctrl-D, you will come here, do a clean-up
@@ -310,8 +311,9 @@ int main(int argc, char** argv)
   printf ("\n");
 
   asprintf(&commandline, 
-	   "make -s -C \"%s\" M=\"%s\" clean ",
-	   kerneldirname, tempdirname);
+	   "make -s -C \"%s\" M=\"%s\" clean && rm -f \"%s/Modules.symvers\"",
+	   kerneldirname, tempdirname, 
+	   tempdirname);
   if (system(commandline))
     {
       fprintf(stderr, PRGNAME ": Warning: Failed execution: %s\n", 
