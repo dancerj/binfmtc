@@ -2,6 +2,21 @@
 # arch-tag: automatic-ChangeLog--dancer@netfort.gr.jp--2005-web/binfmtc--mainline--0.1
 #
 
+2006-09-03 08:15:09 GMT	Junichi Uekawa <dancer@debian.org>	patch-23
+
+    Summary:
+      fix memory leak
+    Revision:
+      binfmtc--mainline--0.1--patch-23
+
+    fix memory leak
+    
+
+    modified files:
+     ChangeLog NEWS changelogs/ChangeLog.mainline configure.ac
+     debian/changelog realcsh.c realksh.c
+
+
 2006-08-05 02:52:38 GMT	Junichi Uekawa <dancer@debian.org>	patch-22
 
     Summary:

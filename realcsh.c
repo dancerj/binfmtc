@@ -2,7 +2,7 @@
 exit 1
 
  *  binfmt_misc C Interpreter
- *  Copyright (C) 2005 Junichi Uekawa
+ *  Copyright (C) 2005-2006 Junichi Uekawa
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -58,7 +58,11 @@ int main(int argc, char** argv)
   while (NULL!=(str = readline("REAL csh: ")))
     {
       if (*str=='\0')		/* ignore blanks. */
-	continue;
+	{
+	  free(str);
+	  continue;
+	}
+      
       add_history(str);
 
       if (*str=='#')
@@ -70,9 +74,11 @@ int main(int argc, char** argv)
 		{
 		  printf("%s\n", t->s);
 		}
+	      free(str);
 	      continue;
 	    }
 	  defs=add_string(defs, str);
+	  free(str);
 	  continue;
 	}
       asprintf(&tempfilename, "%s/realcshXXXXXX",

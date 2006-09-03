@@ -1,3 +1,14 @@
+2006-09-03  Junichi Uekawa  <dancer@debian.org>
+
+	* configure.ac: 0.12
+
+	* realksh.c: fix memory leak when zero-sized line is input.
+
+	* realcsh.c: fix memory leak when zero-sized line is input.
+	load-tested with 
+	  yes '' | realcsh.c
+	  yes 'printf("hello\n");' | ./realcsh.c
+	
 2006-08-05  Junichi Uekawa  <dancer@debian.org>
 
 	* realksh.c (main): clean up properly.

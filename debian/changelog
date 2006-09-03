@@ -1,3 +1,10 @@
+binfmtc (0.12-1) unstable; urgency=low
+
+  * New upstream version
+  * fix memory leak in realcsh.
+
+ -- Junichi Uekawa <dancer@debian.org>  Sun,  3 Sep 2006 17:14:27 +0900
+
 binfmtc (0.11-1) unstable; urgency=low
 
   * New upstream version

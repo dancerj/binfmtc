@@ -219,7 +219,10 @@ int main(int argc, char** argv)
   while (NULL!=(str = readline("REAL ksh: ")))
     {
       if (*str=='\0')		/* ignore blanks lines, they clutter history. */
-	continue;
+	{
+	  free(str);
+	  continue;
+	}
       add_history(str);
 
       /* 
@@ -236,9 +239,11 @@ int main(int argc, char** argv)
 		{
 		  printf("%s\n", t->s);
 		}
+	      free(str);
 	      continue;
 	    }
 	  defs=add_string(defs, str);
+	  free(str);
 	  continue;
 	}
 

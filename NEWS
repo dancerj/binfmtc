@@ -1,3 +1,7 @@
+0.12 3 Sep 2006
+
+! Memleak fix in realcsh.
+
 0.11 5 Aug 2006
 
 ! Minor update on realksh cleanup routine, so that it cleans up
