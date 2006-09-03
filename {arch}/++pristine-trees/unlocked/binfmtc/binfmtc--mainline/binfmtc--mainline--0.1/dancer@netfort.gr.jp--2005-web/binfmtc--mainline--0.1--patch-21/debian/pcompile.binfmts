@@ -1,3 +1,0 @@
-package binfmtc
-interpreter /usr/bin/binfmtp-interpreter
-magic {BINFMTP\x3a

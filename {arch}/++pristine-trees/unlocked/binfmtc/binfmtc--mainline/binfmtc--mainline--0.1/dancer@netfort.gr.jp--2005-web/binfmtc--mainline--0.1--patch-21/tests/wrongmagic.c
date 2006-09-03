@@ -1,3 +1,0 @@
-/*BINWRONG:
-exit 1
-#      */
