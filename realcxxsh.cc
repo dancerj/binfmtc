@@ -26,21 +26,11 @@ exit 1
 #include <sys/stat.h>
 #include <readline.h>
 #include <history.h>
-
-typedef struct defs_list
-{
-  struct defs_list* next;
-  char* s;
-} * defsp;
+#include <iostream>
+#include <sstream>
 
 
-defsp add_string(defsp orig, const char* newstr)
-{
-  defsp t= new defs_list;
-  t->next=orig;
-  t->s=strdup(newstr);
-  return t;
-}
+using namespace std;
 
 int main(int argc, char** argv)
 {
@@ -48,10 +38,16 @@ int main(int argc, char** argv)
   char * tempfilename = NULL;
   FILE * f;
   int fd;
-  defsp t, defs=NULL;
+  stringstream defs;
+  stringstream header;
   
-  defs=add_string(defs, "#include <iostream>");
-  defs=add_string(defs, "using namespace std;");
+  defs << "#include <iostream>\n" 
+       << "using namespace std;\n" ;
+
+  for (int i=1; i < argc; ++i)
+    {
+      header << argv[i] << " ";
+    }
 
   while (NULL!=(str = readline("REAL c++sh: ")))
     {
@@ -68,14 +64,13 @@ int main(int argc, char** argv)
 	  /* ## debug symbol to dump header file list. */
 	  if (*(str+1)=='#')
 	    {
-	      for (t=defs; t; t=t->next)
-		{
-		  printf("%s\n", t->s);
-		}
-	      free(str);
-	      continue;
+	      cout << "defs:" << endl 
+		   << defs.str() << endl
+		   << "header:" << endl 
+		   << header.str() << endl;
 	    }
-	  defs=add_string(defs, str);
+	  else 
+	    defs << str << endl;
 	  free(str);
 	  continue;
 	}
@@ -89,12 +84,10 @@ int main(int argc, char** argv)
       fchmod(fd, 0700);
       
       fprintf(f, 
-	      "/*BINFMTCXX:\n"
-	      "*/\n");
-      for (t=defs; t; t=t->next)
-	{
-	  fprintf(f, "%s\n", t->s);
-	}
+	      "/*BINFMTCXX: %s\n"
+	      "*/\n", header.str().c_str());
+      fprintf(f, "%s\n", defs.str().c_str());
+    
       fprintf(f, 
 	      "int main(int argc, char ** argv)\n"
 	      "{\n"
@@ -107,7 +100,6 @@ int main(int argc, char** argv)
       unlink (tempfilename);
       free (str);
     }
-  printf ("\n");
+  cout << ("\n");
   return 0;
 }
-

@@ -50,6 +50,12 @@ int main(int argc, char** argv)
   FILE * f;
   int fd;
   defsp t, defs=NULL;
+  defsp header=NULL;
+  int i;
+  
+  
+  for (i=1; i < argc; ++i)
+    header=add_string(header, argv[i]);
   
   defs=add_string(defs, "#include <stdlib.h>");
   defs=add_string(defs, "#include <unistd.h>");
@@ -70,9 +76,15 @@ int main(int argc, char** argv)
 	  /* ## debug symbol to dump header file list. */
 	  if (*(str+1)=='#')
 	    {
+	      printf("defs:\n");
 	      for (t=defs; t; t=t->next)
 		{
-		  printf("%s\n", t->s);
+		  printf("  %s\n", t->s);
+		}
+	      printf("header:\n");
+	      for (t=header; t; t=t->next)
+		{
+		  printf("  %s\n", t->s);
 		}
 	      free(str);
 	      continue;
@@ -91,8 +103,14 @@ int main(int argc, char** argv)
       fchmod(fd, 0700);
       
       fprintf(f, 
-	      "/*BINFMTC:\n"
-	      "*/\n");
+	      "/*BINFMTC:");
+      for (t=header; t; t=t->next)
+	{
+	  fprintf(f," %s", t->s);
+	}
+      
+      fprintf(f, 
+	      "\n*/\n");
       for (t=defs; t; t=t->next)
 	{
 	  fprintf(f, "%s\n", t->s);
@@ -112,4 +130,3 @@ int main(int argc, char** argv)
   printf ("\n");
   return 0;
 }
-

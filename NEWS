@@ -1,6 +1,8 @@
 0.XX
 
 + realcxxsh.cc
++ realcsh.c supports adding gcc command-line options, so additional
+  libs can be used in the interactive command-line
 
 0.12 3 Sep 2006
 

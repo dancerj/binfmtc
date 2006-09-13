@@ -1,3 +1,11 @@
+2006-09-13  Junichi Uekawa  <dancer@debian.org>
+
+	* realcsh.c.1: document that gcc options can be passed on.
+
+	* realcsh.c (main): support header options
+
+	* realcxxsh.cc: updated to use more C++ features
+
 2006-09-10  Junichi Uekawa  <dancer@debian.org>
 
 	* realcxxsh.cc: created
