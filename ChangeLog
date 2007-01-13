@@ -1,5 +1,7 @@
 2007-01-13  Junichi Uekawa  <dancer@debian.org>
 
+	* Makefile.am (upload-dist-all): change to aegis
+
 	* realcxxsh.cc.1: create documentation
 
 	* Makefile.am (dist_bin_SCRIPTS): add realcxxsh.cc, and realcxxsh.cc.1 manpage

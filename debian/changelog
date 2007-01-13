@@ -1,9 +1,9 @@
-binfmtc (0.12-2) UNRELEASED; urgency=low
+binfmtc (0.13-1) unstable; urgency=low
 
   * realcxxsh.cc
   * realcsh.c improvement.
 
- -- Junichi Uekawa <dancer@debian.org>  Wed, 13 Sep 2006 19:30:42 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Sat, 13 Jan 2007 18:21:34 +0900
 
 binfmtc (0.12-1) unstable; urgency=low
 
