@@ -1,3 +1,9 @@
+2007-01-13  Junichi Uekawa  <dancer@debian.org>
+
+	* realcxxsh.cc.1: create documentation
+
+	* Makefile.am (dist_bin_SCRIPTS): add realcxxsh.cc, and realcxxsh.cc.1 manpage
+
 2006-09-13  Junichi Uekawa  <dancer@debian.org>
 
 	* realcsh.c.1: document that gcc options can be passed on.

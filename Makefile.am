@@ -11,7 +11,7 @@ binfmtf_interpreter_SOURCES=binfmtc-interpreter.c binfmtc-lang-f.c binfmtc.h
 binfmtp_interpreter_SOURCES=binfmtc-interpreter.c binfmtc-lang-p.c binfmtc.h
 binfmtasm_interpreter_SOURCES=binfmtc-interpreter.c binfmtc-lang-asm.c binfmtc.h
 binfmtgcj_interpreter_SOURCES=binfmtc-interpreter.c binfmtc-lang-gcj.c binfmtc.h
-dist_bin_SCRIPTS= realcsh.c 
+dist_bin_SCRIPTS= realcsh.c realcxxsh.cc
 dist_sbin_SCRIPTS= realksh.c 
 
 TESTS= tests/prerequisite.sh \
@@ -33,7 +33,8 @@ dist_man_MANS= binfmtc-interpreter.1 binfmtcxx-interpreter.1 realcsh.c.1 binfmta
 	binfmtf-interpreter.1 \
 	binfmtp-interpreter.1 \
 	binfmtgcj-interpreter.1 \
-	realksh.c.8
+	realksh.c.8 \
+	realcxxsh.cc.1
 
 TESTS_ENVIRONMENT=bindir=$(bindir) \
 	LC_ALL=C \

@@ -1,19 +1,19 @@
-.TH "realcsh" 1 "2005 May 3" "binfmt_misc Dancer" "binfmt_C"
+.TH "realcsh" 1 "2007 Jan 13" "binfmt_misc Dancer" "binfmt_C"
 .SH "NAME"
-realcsh.c \- A shell for running C code
+realcxxsh.c \- A shell for running C++ code
 .SH "SYNOPSIS"
-.BI "realcsh.c [" "gcc options" "]"
+.BI "realcxxsh.c [" "g++ options" "]"
 .SH "DESCRIPTION"
 .B "realcsh.c"
-is an interactive shell that runs C source code.
+is an interactive shell that runs C++ source code.
 A line of input is handled as a line in
 .B "main()"
-function, and the resulting C code is compiled, and executed.
+function, and the resulting C++ code is compiled, and executed.
 
 If a line starting with
 .B "#"
 such as 
-.B "#include <stdio.h>"
+.B "#include <iostream>"
 is entered, it is added to every code after that
 at the start of sourcecode.
 
@@ -25,22 +25,22 @@ The list of such lines can be seen with
 The following is an example session
 
 .nf
-$ realcsh.c
-REAL csh: printf("hello world\\n");
-hello world
-REAL csh: system ("pwd");
-/home/dancer/
+$ ./realcxxsh.cc 
+REAL c++sh: cout << "Hello world\n"; 
+Hello world
+REAL c++sh: system ("pwd"); 
+/home/dancer
+REAL c++sh: 
 .hy
 
 .SH "INTERNALS" 
 The following is how the C code looks like.
 
 .nf
-/*BINFMTC:
+/*BINFMTCXX:
 */
-#include <stdlib.h>
-#include <unistd.h>
-#include <stdio.h>
+#include <iostream>
+
 int main(int argc, char ** argv)
 {
 .I "input-line"
@@ -56,5 +56,5 @@ Upstream page is available at
 
 .SH "SEE ALSO"
 .BR "binfmtc-interpreter" "(1)," 
-.BR "realksh.c" "(1)," 
-.BR "realcxxsh.cc" "(1)" 
+.BR "realcsh.c" "(1), " 
+.BR "realksh.c" "(1)" 
