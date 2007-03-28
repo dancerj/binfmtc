@@ -1,8 +1,8 @@
 /*BINFMTCXX: -lreadline -I/usr/include/readline
 exit 1
 
- *  binfmt_misc C Interpreter
- *  Copyright (C) 2005-2006 Junichi Uekawa
+ *  binfmt_misc C++ Interpreter
+ *  Copyright (C) 2005-2007 Junichi Uekawa
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -35,9 +35,6 @@ using namespace std;
 int main(int argc, char** argv)
 {
   char * str = NULL;
-  char * tempfilename = NULL;
-  FILE * f;
-  int fd;
   stringstream defs;
   stringstream header;
   
@@ -74,28 +71,36 @@ int main(int argc, char** argv)
 	  free(str);
 	  continue;
 	}
+
+      stringstream temporarysource;
+
+      temporarysource << 
+	"/*BINFMTCXX: " << 
+	header.str() << 
+	"\n" <<
+	"*/\n" <<
+	defs.str() <<
+	"\n"  <<
+	"int main(int argc, char ** argv)\n"
+	"{\n" <<
+	str << ";\n" 
+	"return 0; \n"
+	"}\n";
+	
+      char * tempfilename = NULL;
       asprintf(&tempfilename, "%s/realcshXXXXXX",
 	       getenv("BINFMTCTMPDIR")?:
 	       getenv("TMPDIR")?:
 	       getenv("TEMPDIR")?:
 	       "/tmp"
 	       );
-      f = fdopen(fd=mkstemp(tempfilename), "w");
+
+      int fd;
+      fd=mkstemp(tempfilename);
       fchmod(fd, 0700);
-      
-      fprintf(f, 
-	      "/*BINFMTCXX: %s\n"
-	      "*/\n", header.str().c_str());
-      fprintf(f, "%s\n", defs.str().c_str());
-    
-      fprintf(f, 
-	      "int main(int argc, char ** argv)\n"
-	      "{\n"
-	      "%s;\n"
-	      "return 0; \n"
-	      "}\n",
-	      str);
-      fclose (f);
+      write(fd, temporarysource.str().c_str(),
+	    temporarysource.str().size());
+      close(fd);
       system (tempfilename);
       unlink (tempfilename);
       free (str);

@@ -1,3 +1,7 @@
+2007-03-29  Junichi Uekawa  <dancer@debian.org>
+
+	* realcxxsh.cc: reorganize source code.
+
 2007-01-13  Junichi Uekawa  <dancer@debian.org>
 
 	* Makefile.am (upload-dist-all): change to aegis
