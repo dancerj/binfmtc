@@ -3,4 +3,26 @@ binfmtc for Debian
 
 binfmt_misc handler for C languages, and others.
 
- -- Junichi Uekawa <dancer@debian.org>, Sat May  7 05:50:42 2005
+This package contains support for 
+	gcc
+	g++
+	gas
+	gcj
+	g77
+	gpc
+
+See the following manual pages for details on each language.
+	binfmtasm-interpreter
+	binfmtf-interpreter
+	binfmtp-interpreter
+	binfmtgcj-interpreter
+	binfmtc-interpreter
+	binfmtcxx-interpreter
+
+There are example light-weight interactive languages, which are 
+'interpreted' themselves
+	realcxxsh.cc
+	realcsh.c
+	realksh.c
+
+ -- Junichi Uekawa <dancer@debian.org>, Fri, 18 May 2007 22:51:54 +0900
