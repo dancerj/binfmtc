@@ -1,10 +1,11 @@
-binfmtc (0.13-2) UNRELEASED; urgency=low
+binfmtc (0.14-1) unstable; urgency=low
 
+  * New upstream version
   * realcxxsh.cc improvement.
   * Bug fix: "binfmtc: Missing readline dependency", thanks to Vincent
     Crevot (Closes: #418625).
 
- -- Junichi Uekawa <dancer@debian.org>  Wed, 11 Apr 2007 07:01:16 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Fri, 18 May 2007 22:57:56 +0900
 
 binfmtc (0.13-1) unstable; urgency=low
 
