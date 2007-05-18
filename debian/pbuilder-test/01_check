@@ -1,0 +1,5 @@
+#!/bin/bash
+#  requires installation in host system also.
+
+apt-get install -y --force-yes libreadline5-dev sudo 
+make check 
