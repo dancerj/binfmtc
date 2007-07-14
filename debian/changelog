@@ -1,4 +1,4 @@
-binfmtc (0.14-1) UNRELEASED; urgency=low
+binfmtc (0.14-1) unstable; urgency=low
 
   * New upstream version
   * realcxxsh.cc improvement.
@@ -6,7 +6,7 @@ binfmtc (0.14-1) UNRELEASED; urgency=low
     Crevot (Closes: #418625).
   * add pbuilder-test
 
- -- Junichi Uekawa <dancer@debian.org>  Fri, 18 May 2007 23:02:30 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Sat, 14 Jul 2007 17:54:27 +0900
 
 binfmtc (0.13-1) unstable; urgency=low
 
