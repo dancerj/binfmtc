@@ -156,6 +156,7 @@ char* compile_source(const char *sourcename)
 int exec_prog(const char * filename, int argc, char**argv)
 {
   int pid;
+  int parent_pid;
 
   switch(pid=fork())
     {
@@ -166,13 +167,19 @@ int exec_prog(const char * filename, int argc, char**argv)
       return EXIT_FAILURE;
       break;
     case 0:
-      /* when I am the child process, just unlink after 1 seconds; 
-	 the parent process should have exec'd by now. */
+      /* when I am the child process, unlink the file after the parent
+	 process has exited.
+       */
+      parent_pid=getppid();
       if (daemon(0,0) < 0)
 	{
 	  exit (-1);
 	}
-      sleep(1);
+      while ((parent_pid!=-1)
+	     && (kill(parent_pid,0) >= 0))
+	{
+	  sleep(1);
+	}
       unlink(filename);
       exit(0);
     default:

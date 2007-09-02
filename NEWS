@@ -1,3 +1,8 @@
+0.15 2 Sep 2007
+
++ Remove temporary files at process exit time. 
+  Process exit is monitored every second.
+
 0.14 10 May 2007
 
 ! Fix typo in realcxxsh.cc.1 manpage

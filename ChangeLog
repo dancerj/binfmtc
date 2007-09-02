@@ -1,3 +1,10 @@
+2007-09-02  Junichi Uekawa  <dancer@debian.org>
+
+	* configure.ac: 0.15
+
+	* binfmtc-interpreter.c (exec_prog): unlink the executable file
+	after parent process has exited.
+
 2007-05-18  Junichi Uekawa  <dancer@debian.org>
 
 	* configure.ac: 0.14
