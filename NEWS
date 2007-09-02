@@ -1,7 +1,8 @@
 0.15 2 Sep 2007
 
 + Remove temporary files at process exit time. 
-  Process exit is monitored every second.
+  Process exit is monitored every second
+! Handle Modules.symvers->Module.symvers change in Linux Kernel.
 
 0.14 10 May 2007
 

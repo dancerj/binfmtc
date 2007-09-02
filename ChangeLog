@@ -2,6 +2,8 @@
 
 	* configure.ac: 0.15
 
+	* realksh.c: handle rename of Modules.symvers to Module.symvers.
+
 	* binfmtc-interpreter.c (exec_prog): unlink the executable file
 	after parent process has exited.
 

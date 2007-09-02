@@ -307,6 +307,7 @@ int main(int argc, char** argv)
       free(str);
 
       /* yield here, I want output to come out. */
+      sleep(1);
       sched_yield();
       sched_yield();
     }
@@ -316,7 +317,7 @@ int main(int argc, char** argv)
   printf ("\n");
 
   asprintf(&commandline, 
-	   "make -s -C \"%s\" M=\"%s\" clean && rm -f \"%s/Modules.symvers\"",
+	   "make -s -C \"%s\" M=\"%s\" clean && rm -f \"%s/Module.symvers\"",
 	   kerneldirname, tempdirname, 
 	   tempdirname);
   if (system(commandline))
