@@ -1,3 +1,12 @@
+binfmtc (0.15-1) unstable; urgency=low
+
+  * New upstream version
+  - Remove temporary files at process exit time. 
+  Process exit is monitored every second
+  - realksh: Handle Modules.symvers->Module.symvers change in Linux Kernel.
+
+ -- Junichi Uekawa <dancer@debian.org>  Sun, 02 Sep 2007 11:28:28 +0900
+
 binfmtc (0.14-1) unstable; urgency=low
 
   * New upstream version
