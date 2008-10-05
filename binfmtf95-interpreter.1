@@ -1,0 +1,73 @@
+.TH "binfmtf" 1 "2005 Jun 4" "binfmt_misc Dancer" "binfmt_C"
+.SH NAME
+binfmtf-interpreter \- binfmt_misc fortran handler
+.SH SYNOPSIS
+.BI "binfmtf-interpreter " "fortran-source-file-name" " [" "command-line opions ..." "]"
+.SH "DESCRIPTION"
+.B "binfmtf-interpreter"
+compiles a fortran source file specified on the command-line using 
+the gfortran compiler, and executes the resulting file.
+
+It is designed to be used as a handler for 
+.B "binfmt_misc"
+handler, which is a system used in Linux for handling arbitrary files 
+as executables.
+
+The command-line options are passed on to the 
+compiled binary.
+
+.SH "FILE MAGIC"
+
+There is a requirement for Fortran source files to have the 
+magic characters
+.B "! BINFMTF95:"
+at the beginning of the file.
+
+That line also is used to specify the additional command-line options
+for Fortran compiler.
+
+.SH "ENVIRONMENT"
+.TP
+.B "GFORTRAN"
+The compiler used.
+The default is to use
+.B "gfortran"
+
+.TP
+.B "BINFMTCTMPDIR"
+
+Temporary directory used for binary and execution.
+
+Falls back to 
+.B "$TMPDIR" 
+.B "$TEMPDIR"
+or
+.B "/tmp"
+
+.TP
+.B "BINFMTC_DEBUG"
+enables debug output if set.
+
+.TP
+.B "BINFMTC_GFORTRAN_OPTS"
+Additional Gfortran options.
+Use 
+.B "BINFMTC_DEBUG"
+to verify the options being passed on to gfortran.
+
+The default is
+.B " -O2 -Wall "
+
+.SH "AUTHOR"
+Junichi Uekawa (dancer@debian.org)
+
+Upstream page is available at 
+.B "http://www.netfort.gr.jp/~dancer/software/"
+
+.SH "SEE ALSO"
+.BR "binfmtasm-interpreter" "(1), "
+.BR "binfmtc-interpreter" "(1), "
+.BR "binfmtcxx-interpreter" "(1), "
+.BR "binfmtf-interpreter" "(1), "
+.BR "binfmtgcj-interpreter" "(1), "
+.BR "binfmtp-interpreter" "(1)" 

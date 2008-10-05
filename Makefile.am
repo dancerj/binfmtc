@@ -1,5 +1,6 @@
 bin_PROGRAMS=binfmtc-interpreter \
 	binfmtf-interpreter \
+	binfmtf95-interpreter \
 	binfmtp-interpreter \
 	binfmtcxx-interpreter \
 	binfmtasm-interpreter \
@@ -8,6 +9,7 @@ bin_PROGRAMS=binfmtc-interpreter \
 binfmtcxx_interpreter_SOURCES=binfmtc-interpreter.c binfmtc-lang-cxx.c binfmtc.h
 binfmtc_interpreter_SOURCES=binfmtc-interpreter.c binfmtc-lang-c.c binfmtc.h
 binfmtf_interpreter_SOURCES=binfmtc-interpreter.c binfmtc-lang-f.c binfmtc.h
+binfmtf95_interpreter_SOURCES=binfmtc-interpreter.c binfmtc-lang-f95.c binfmtc.h
 binfmtp_interpreter_SOURCES=binfmtc-interpreter.c binfmtc-lang-p.c binfmtc.h
 binfmtasm_interpreter_SOURCES=binfmtc-interpreter.c binfmtc-lang-asm.c binfmtc.h
 binfmtgcj_interpreter_SOURCES=binfmtc-interpreter.c binfmtc-lang-gcj.c binfmtc.h
@@ -31,6 +33,7 @@ TESTS= tests/prerequisite.sh \
 
 dist_man_MANS= binfmtc-interpreter.1 binfmtcxx-interpreter.1 realcsh.c.1 binfmtasm-interpreter.1 \
 	binfmtf-interpreter.1 \
+	binfmtf95-interpreter.1 \
 	binfmtp-interpreter.1 \
 	binfmtgcj-interpreter.1 \
 	realksh.c.8 \
