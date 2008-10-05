@@ -88,3 +88,6 @@ viper: distcheck
 upload-dist-all: distcheck
 	scp @PACKAGE@-@VERSION@.tar.gz aegis.netfort.gr.jp:public_html/software/downloads
 	$(MAKE) ../@PACKAGE@_@VERSION@.orig.tar.gz
+
+check-syntax:
+	$(CC) -c -O2 -Wall $(CHK_SOURCES)  -o/dev/null -D LIBDIR="\"${LIBDIR}\""
