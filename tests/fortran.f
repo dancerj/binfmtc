@@ -1,6 +1,4 @@
-c BINFMTF:
-c
-c
+! BINFMTF95:
       PROGRAM HELLO
       WRITE(*,*) 'Hello World'
       END
