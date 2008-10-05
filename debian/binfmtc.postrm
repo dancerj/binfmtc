@@ -13,6 +13,8 @@ if [ remove = "$1" -a -x /usr/sbin/update-binfmts ]; then
     /usr/sbin/update-binfmts --package binfmtc \
 	--remove fcompile /usr/bin/binfmtf-interpreter
     /usr/sbin/update-binfmts --package binfmtc \
+	--remove f95compile /usr/bin/binfmtf95-interpreter
+    /usr/sbin/update-binfmts --package binfmtc \
 	--remove pcompile /usr/bin/binfmtp-interpreter
 fi
 
