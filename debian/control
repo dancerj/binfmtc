@@ -9,7 +9,7 @@ Package: binfmtc
 Architecture: any
 Depends: ${shlibs:Depends}, gcc, binutils, g++, binfmt-support
 Recommends: libreadline5-dev
-Suggests: g77, gcj, gpc
+Suggests: gfortran, gcj, gpc
 Description: Execute C program as script
  Linux binfmt_misc handler for C, C++, Assembly languages, Pascal,
  Fortran, Java(GCJ).
