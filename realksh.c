@@ -317,8 +317,11 @@ int main(int argc, char** argv)
   printf ("\n");
 
   asprintf(&commandline, 
-	   "make -s -C \"%s\" M=\"%s\" clean && rm -f \"%s/Module.symvers\"",
-	   kerneldirname, tempdirname, 
+	   "make -s -C \"%s\" M=\"%s\" clean && "
+	   "rm -f \"%s/Module.symvers\" \"%s/modules.order\"",
+	   kerneldirname,
+	   tempdirname, 
+	   tempdirname,
 	   tempdirname);
   if (system(commandline))
     {
