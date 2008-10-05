@@ -1,0 +1,3 @@
+package binfmtc
+interpreter /usr/bin/binfmtf95-interpreter
+magic \x21\x20BINFMTF95\x3a

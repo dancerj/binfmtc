@@ -9,11 +9,13 @@ This package contains support for
 	gas
 	gcj
 	g77
+	gfortran
 	gpc
 
 See the following manual pages for details on each language.
 	binfmtasm-interpreter
 	binfmtf-interpreter
+	binfmtf95-interpreter
 	binfmtp-interpreter
 	binfmtgcj-interpreter
 	binfmtc-interpreter
@@ -25,4 +27,4 @@ There are example light-weight interactive languages, which are
 	realcsh.c
 	realksh.c
 
- -- Junichi Uekawa <dancer@debian.org>, Fri, 18 May 2007 22:51:54 +0900
+ -- Junichi Uekawa <dancer@debian.org>, Sat,  4 Oct 2008 22:51:44 -0700

@@ -15,5 +15,6 @@ echo ":cxxcompile:M::/*BINFMTCXX\\x3a::@bindir@/binfmtcxx-interpreter:" > /proc/
 echo ":asmassembly:M::/*BINFMTASMCPP\\x3a::@bindir@/binfmtasm-interpreter:" > /proc/sys/fs/binfmt_misc/register
 echo ":gcjcompile:M:://BINFMTGCJ\\x3a::@bindir@/binfmtgcj-interpreter:" > /proc/sys/fs/binfmt_misc/register
 echo ":fcompile:M::c\\x20BINFMTF\\x3a::@bindir@/binfmtf-interpreter:" > /proc/sys/fs/binfmt_misc/register
+echo ":f95compile:M::\\x21\\x20BINFMTF95\\x3a::@bindir@/binfmtf95-interpreter:" > /proc/sys/fs/binfmt_misc/register
 echo ":pcompile:M::{BINFMTP\\x3a::@bindir@/binfmtp-interpreter:" > /proc/sys/fs/binfmt_misc/register
 echo SUCCESS

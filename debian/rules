@@ -53,7 +53,7 @@ install: build
 	-rm $(CURDIR)/debian/binfmtc/usr/sbin/binfmtc-init.sh
 	-rm $(CURDIR)/debian/binfmtc/usr/sbin/binfmtc-unreg.sh
 
-	for A in ccompile cxxcompile asmassembly gcjcompile fcompile pcompile; do \
+	for A in ccompile cxxcompile asmassembly gcjcompile fcompile f95compile pcompile; do \
 		$(INSTALL_FILE) debian/$$A.binfmts $(CURDIR)/debian/binfmtc/usr/share/binfmts/$$A ; \
 		done
 
