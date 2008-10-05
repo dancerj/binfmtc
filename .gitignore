@@ -3,6 +3,7 @@
 *.rej
 *~
 /.deps
+/INSTALL
 /Makefile
 /Makefile.in
 /aclocal.m4
@@ -11,13 +12,16 @@
 /binfmtc-interpreter
 /binfmtcxx-interpreter
 /binfmtf-interpreter
+/binfmtf95-interpreter
 /binfmtgcj-interpreter
 /binfmtp-interpreter
+/build-stamp
 /config.h
 /config.h.in
 /config.log
 /config.status
 /configure
+/configure-stamp
 /depcomp
 /install-sh
 /missing
