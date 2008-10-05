@@ -1,10 +1,11 @@
-binfmtc (0.15-2) UNRELEASED; urgency=low
+binfmtc (0.16-1) unstable; urgency=low
 
+  * New upstream version
   * Update of package intended for lenny release.
   * Handle lenny linux kernel with realksh.c
   * handle transition for g77->gfortran in lenny.
 
- -- Junichi Uekawa <dancer@debian.org>  Sat, 04 Oct 2008 23:45:02 -0700
+ -- Junichi Uekawa <dancer@debian.org>  Sat, 04 Oct 2008 23:52:39 -0700
 
 binfmtc (0.15-1) unstable; urgency=low
 
