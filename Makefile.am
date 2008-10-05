@@ -88,10 +88,3 @@ viper: distcheck
 upload-dist-all: distcheck
 	scp @PACKAGE@-@VERSION@.tar.gz aegis.netfort.gr.jp:public_html/software/downloads
 	$(MAKE) ../@PACKAGE@_@VERSION@.orig.tar.gz
-
-# tla check.
-tree-check:
-	-chmod u+w -R /tmp/tlatest/
-	-rm -rf /tmp/tlatest
-	-mkdir /tmp/tlatest 
-	cd /tmp/tlatest && tla get $(shell tla tree-version) && cd binfmtc--mainline* && ./autogen.sh && ./configure && make distcheck
