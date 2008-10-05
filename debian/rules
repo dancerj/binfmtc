@@ -55,7 +55,7 @@ install: build
 
 	for A in ccompile cxxcompile asmassembly gcjcompile fcompile f95compile pcompile; do \
 		$(INSTALL_FILE) debian/$$A.binfmts $(CURDIR)/debian/binfmtc/usr/share/binfmts/$$A ; \
-		done
+	done
 
 # Build architecture-independent files here.
 binary-indep: build install
