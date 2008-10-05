@@ -1,3 +1,8 @@
+0.16 4 Oct 2008
+
++ g77 to f95 (gfortran) transition, g77 is no longer available in
+  Debian.
+
 0.15 2 Sep 2007
 
 + Remove temporary files at process exit time. 
