@@ -2,6 +2,7 @@
 
 + g77 to f95 (gfortran) transition, g77 is no longer available in
   Debian.
+! Handle modules.order in realksh.c
 
 0.15 2 Sep 2007
 
