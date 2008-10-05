@@ -90,4 +90,4 @@ upload-dist-all: distcheck
 	$(MAKE) ../@PACKAGE@_@VERSION@.orig.tar.gz
 
 check-syntax:
-	$(CC) -c -O2 -Wall $(CHK_SOURCES)  -o/dev/null -D LIBDIR="\"${LIBDIR}\""
+	$(CC) -c -O2 -Wall $(CHK_SOURCES)  -o/dev/null -I/usr/include/readline
