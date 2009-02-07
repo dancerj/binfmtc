@@ -37,5 +37,5 @@ const char* compiler_name(void)
 const char* default_options(void)
 {
   return getenv("BINFMTC_GCC_OPTS")?:
-    " -O2 -Wall ";
+    " -O2 -Wall -g ";
 }

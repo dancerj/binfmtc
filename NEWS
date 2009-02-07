@@ -1,3 +1,7 @@
+0.17 XXXXXXXX
+
++ -g option added to default for C++/C for easy debugging.
+
 0.16 4 Oct 2008
 
 + g77 to f95 (gfortran) transition, g77 is no longer available in

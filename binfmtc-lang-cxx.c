@@ -39,5 +39,5 @@ const char* compiler_name(void)
 const char* default_options(void)
 {
   return getenv("BINFMTCXX_GXX_OPTS")?:
-    " -O0 -Wall ";
+    " -O0 -Wall -g ";
 }
