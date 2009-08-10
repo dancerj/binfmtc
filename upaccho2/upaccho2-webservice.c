@@ -100,7 +100,7 @@ static struct urlhandlers_t* urlhandlers=NULL; /* There is no deletion function 
 void* http_add_handler(const char* path,
 		      void (*func)(int, const char*, const char*))
 {
-  struct urlhandlers_t* u=malloc(sizeof(struct urlhandlers_t));
+  struct urlhandlers_t* u=(struct urlhandlers_t*)malloc(sizeof(struct urlhandlers_t));
   if (!u)
     return NULL;
   if (!path || !func)
