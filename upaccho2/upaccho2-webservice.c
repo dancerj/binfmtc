@@ -180,6 +180,7 @@ int http_initiate_webserver(int portnumber)
   int incoming_socket;		/* the main waiting socket */
   int t;			/* new incoming calls */
   struct hostent *hp;
+  socklen_t sa_size = sizeof(sa);
 
   puts ("Upaccho web server version 0.0.1\n"
 	"copyright 2001,2005 Junichi Uekawa\n");
@@ -199,12 +200,17 @@ int http_initiate_webserver(int portnumber)
   sa.sin_addr.s_addr= htonl(INADDR_ANY); /* should it be like this? it's 0 in linux */
   sa.sin_family = hp->h_addrtype;
 
-  if (bind(incoming_socket, (struct sockaddr*)&sa, sizeof(sa)) < 0  )
+  if (bind(incoming_socket, (struct sockaddr*)&sa, sa_size) < 0  )
     {
       perror("bind");
       exit(1);
     }
   listen(incoming_socket, BACKLOG);
+
+  if (getsockname(incoming_socket, (struct sockaddr*)&sa, &sa_size) == 0)
+    {
+      printf("Listening to port %i\n", ntohs(sa.sin_port));
+    }
   while(1)			/* this is a never-terminating loop
 				 */
     {
