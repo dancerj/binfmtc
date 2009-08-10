@@ -1,8 +1,8 @@
 binfmtc (0.16-2) UNRELEASED; urgency=low
 
-  * 
+  * Improve C++ compilation for upaccho example.
 
- -- Junichi Uekawa <dancer@debian.org>  Sat, 04 Oct 2008 23:59:05 -0700
+ -- Junichi Uekawa <dancer@debian.org>  Mon, 10 Aug 2009 09:49:20 +0900
 
 binfmtc (0.16-1) unstable; urgency=low
 
