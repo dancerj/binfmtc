@@ -83,12 +83,24 @@ void openanddump(int sock, const char* path, const char* filename)
 
 int main(int ac, char** av)
 {
-  if (ac != 2)
+  int port;
+
+  if (ac != 2 && ac != 1)
     {
       fprintf(stderr, "Please specify the port as the command-line parameter\n");
       exit(1);
     }
   http_add_handler("/", openanddump);
+  if (ac == 2)
+    {
+      port = atoi(av[1]);
+    }
+  else
+    {
+      // use random free port the OS assigns.
+      port = 0;
+    }
+
   http_initiate_webserver(atoi(av[1]));
   return 0;
 }
