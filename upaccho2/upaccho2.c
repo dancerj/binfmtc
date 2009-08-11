@@ -101,7 +101,7 @@ int main(int ac, char** av)
       port = 0;
     }
 
-  http_initiate_webserver(atoi(av[1]));
+  http_initiate_webserver(port);
   return 0;
 }
 
