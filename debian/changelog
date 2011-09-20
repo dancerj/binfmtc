@@ -2,7 +2,12 @@ binfmtc (0.16-2) UNRELEASED; urgency=low
 
   * Improve C++ compilation for upaccho example.
 
- -- Junichi Uekawa <dancer@debian.org>  Mon, 10 Aug 2009 09:49:20 +0900
+  [ Matthias Klose ]
+  * patch from ubuntu (closes: #640126)
+  * Recommend libreadline-dev instead of libreadline5-dev.
+  * Suggests gcj-jdk instead of gcj, drop gpc suggestion.
+
+ -- Junichi Uekawa <dancer@debian.org>  Tue, 20 Sep 2011 14:31:15 +0900
 
 binfmtc (0.16-1) unstable; urgency=low
 
