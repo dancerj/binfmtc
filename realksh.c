@@ -22,22 +22,25 @@ exit 1
  *
  *
  * M-x compile:
- * gcc -S -c realksh.c -I /usr/include/readline -Wall -O2 
+ * gcc -S -c realksh.c -I /usr/include/readline -Wall -O2
  */
 #define _GNU_SOURCE
+
+#include <assert.h>
+#include <history.h>
+#include <readline.h>
+#include <sched.h>
+#include <signal.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
+#include <sys/klog.h>
 #include <sys/stat.h>
-#include <sys/utsname.h>
-#include <readline.h>
-#include <history.h>
+#include <sys/stat.h>
 #include <sys/types.h>
+#include <sys/utsname.h>
 #include <sys/wait.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <signal.h>
-#include <sched.h>
+#include <unistd.h>
+
 
 #define PRGNAME "realksh"
 
@@ -48,7 +51,7 @@ typedef struct defs_list
 } * defsp;
 
 
-/* 
+/*
    Add a new string to list of "#" lines.
    #include, #define etc.
  */
@@ -60,50 +63,36 @@ defsp add_string(defsp orig, const char* newstr)
   return t;
 }
 
-/* 
-   fork a process that dumps dmesg (proc/kmsg) to stdout.
 
-   return the process's pid
+/*
+ * Clear kernel 'ring-buffer' so that we don't need to see it.
  */
-pid_t kmsgloop(void)
-{
-  /* do a loop looking at kmsg
-     This only works if you're running as root.
-   */
-  int f;
-  int cnt;
-  pid_t p;
-  char log_buffer[1024];
-      
-  switch (p=fork())
-    {
-    case 0:
-      if (-1==(f=open("/proc/kmsg", O_RDONLY)))
-	{
-	  perror("open: /proc/kmsg cannot be opened, you won't see dmesg");
-	  exit (1); 
-	}
-      
-      while (( cnt = read (f, log_buffer, sizeof(log_buffer) - 1 )) >= 0 )
-	{
-	  write(1, "KMSG: ", 6);
-	  write(1, log_buffer, cnt);
-	  write(1, "\n:", 1);
-	}
-      perror(PRGNAME": read: /proc/kmsg handling failed");
-      exit (1);
-    case -1:
-      perror(PRGNAME": fork");
-      exit (1);
-      
-    default:
-      /* Parent process, won't do much here. */
-      break;
-    }
-  return p;
+void clear_kernel_ring_buffer(void) {
+  // clear kmsg ring buffer
+  klogctl(5, NULL, 0);
 }
 
-/* 
+/*
+  Dump kernel message
+ */
+void dump_kernel_message(void)
+{
+  // arbitrary size of buffer which hopefully will fit anything
+  // that your code will dump.
+  //
+  // NB: This makes this code non-reentrant.
+  static char log_buffer[ 64 * 1024 ];
+
+  // read ring buffer and do something.
+  int read_size = klogctl(4, log_buffer, sizeof(log_buffer));
+  if (read_size > 0) {
+    write(1, "KMSG: ", 6);
+    write(1, log_buffer, read_size);
+    write(1, "\n:", 1);
+  }
+}
+
+/*
    get the path to kernel build directory from /lib/modules/KVER/build/
 
    return NULL on failure.
@@ -112,17 +101,17 @@ char* get_kerneldirname(void)
   {
     struct utsname u;
     char* kerneldirname;
-    
+
     if (-1==uname (&u))
       {
 	perror(PRGNAME": uname");
 	return NULL;
       }
-    if (asprintf (&kerneldirname, "/lib/modules/%s/build", 
+    if (asprintf (&kerneldirname, "/lib/modules/%s/build",
 		  u.release)<0)
       {
 	fprintf(stderr, PRGNAME ": asprintf failed\n");
-	return NULL;      
+	return NULL;
       }
     return kerneldirname;
   }
@@ -148,24 +137,18 @@ int main(int argc, char** argv)
 
   FILE * f;
   defsp t, defs=NULL;
-  pid_t p;
-  
-  /* 
+
+  /*
      initialize the header file list.  This is the minimal list that
      would enable basic module functionality.
-     
+
      This list also happens to allow most kernel operations, like
      printk, and mfspr (ppc) etc.
-     
+
      Add lines here to improve default for your liking.
    */
   defs=add_string(defs, "#include <linux/init.h>");
   defs=add_string(defs, "#include <linux/module.h>");
-  
-  /* 
-     fork a process to output dmesg.
-   */
-  p=kmsgloop();
 
   /* obtain the kernel build directory */
   if (!(kerneldirname=get_kerneldirname()))
@@ -180,14 +163,14 @@ int main(int argc, char** argv)
 	   )<0)
     {
       fprintf(stderr, PRGNAME ": asprintf failed\n");
-      return 1;      
+      return 1;
     }
   if (!mkdtemp(tempdirname))
     {
       perror (PRGNAME": mkdtemp");
       return 1;
     }
-  
+
   asprintf(&kbuildfilename, "%s/Kbuild",
 	   tempdirname);
   asprintf(&tempfilename, "%s/%s-main.c",
@@ -196,11 +179,11 @@ int main(int argc, char** argv)
   f=fopen (kbuildfilename, "w");
   fprintf(f, "obj-m:=%s.o\n"
 	  "%s-y:=%s-main.o\n",
-	  modulename, 
+	  modulename,
 	  modulename, modulename);
   fclose(f);
 
-  /* 
+  /*
      check that I have root permissions.
      insmod/rmmod, and /proc/kmsg requires root.
 
@@ -212,8 +195,9 @@ int main(int argc, char** argv)
       fprintf(stderr, PRGNAME ": Warning: root privilege is probably required for most operation\n");
     }
 
+  clear_kernel_ring_buffer();
 
-  /* 
+  /*
      The main interactive command loop.
   */
   while (NULL!=(str = readline("REAL ksh: ")))
@@ -225,8 +209,8 @@ int main(int argc, char** argv)
 	}
       add_history(str);
 
-      /* 
-	 ## = dump list 
+      /*
+	 ## = dump list
 	 # ... = add this line. e.g. #include <.....h>
       */
       if (*str=='#')
@@ -247,7 +231,7 @@ int main(int argc, char** argv)
 	  continue;
 	}
 
-      /* 
+      /*
 	 creation of module source-code to be processed
        */
       f=fopen(tempfilename, "w");
@@ -255,7 +239,7 @@ int main(int argc, char** argv)
 	{
 	  fprintf(f, "%s\n", t->s);
 	}
-      fprintf(f, 
+      fprintf(f,
 	      "MODULE_AUTHOR(\"%s\");\n"
 	      "MODULE_DESCRIPTION(\"%s\");\n"
 	      "MODULE_LICENSE(\"%s\");\n"
@@ -272,7 +256,7 @@ int main(int argc, char** argv)
 	      ,
 	      module_author,
 	      module_description,
-	      module_license, 
+	      module_license,
 	      modulename,
 	      str,
 	      modulename,
@@ -281,21 +265,21 @@ int main(int argc, char** argv)
       fclose (f);
 
       /* build and execute */
-      asprintf(&commandline, 
+      asprintf(&commandline,
 	       "cd %s && make -s -C \"%s\" M=\"%s\" && insmod %s.ko",
-	       tempdirname, kerneldirname, 
+	       tempdirname, kerneldirname,
 	       tempdirname, modulename);
       if ((ret=system (commandline)))
 	{
-	  fprintf(stderr, 
+	  fprintf(stderr,
 		  PRGNAME
-		  ": non-zero return code from make/exec command: %i: %s\n", 
+		  ": non-zero return code from make/exec command: %i: %s\n",
 		  ret, commandline);
 	}
       free(commandline);
 
       /* clean-up module regardless of failure or success */
-      asprintf(&commandline, 
+      asprintf(&commandline,
 	       "rmmod %s.ko",
 	       modulename
 	       );
@@ -306,39 +290,35 @@ int main(int argc, char** argv)
       free(commandline);
       free(str);
 
-      /* yield here, I want output to come out. */
-      sleep(1);
+      /* yield here, to let the kernel do what it wants to do. I want
+	 output to come out. */
       sched_yield();
       sched_yield();
+      dump_kernel_message();
     }
 
   /* After ctrl-D, you will come here, do a clean-up
    */
   printf ("\n");
 
-  asprintf(&commandline, 
+  asprintf(&commandline,
 	   "make -s -C \"%s\" M=\"%s\" clean && "
 	   "rm -f \"%s/Module.symvers\" \"%s/modules.order\"",
 	   kerneldirname,
-	   tempdirname, 
+	   tempdirname,
 	   tempdirname,
 	   tempdirname);
   if (system(commandline))
     {
-      fprintf(stderr, PRGNAME ": Warning: Failed execution: %s\n", 
+      fprintf(stderr, PRGNAME ": Warning: Failed execution: %s\n",
 	      commandline);
     }
-  
+
   if ((-1==unlink (kbuildfilename)))
     perror (PRGNAME": unlink of temporary Kbuild file failed");
   unlink (tempfilename);	/* this may or may not exist */
   if (-1==rmdir (tempdirname))
     perror (PRGNAME": rmdir of temporary dir failed");
-
-  /* clean up the process */
-  kill(p, SIGTERM);
-  if (-1==waitpid(p, NULL, 0))
-    perror(PRGNAME": waitpid");
 
   return 0;
 }
