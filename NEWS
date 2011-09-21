@@ -1,6 +1,8 @@
-0.17 XXXXXXXX
+0.17 21 Sep 2011
 
 + -g option added to default for C++/C for easy debugging.
++ realksh.c kernel printk message handling is more deterministic.
+! removed pascal support.
 
 0.16 4 Oct 2008
 
