@@ -1,4 +1,4 @@
-binfmtc (0.17-1) UNRELEASED; urgency=low
+binfmtc (0.17-1) unstable; urgency=low
 
   [ Junichi Uekawa ]
   * New upstream release
@@ -9,7 +9,7 @@ binfmtc (0.17-1) UNRELEASED; urgency=low
   * Recommend libreadline-dev instead of libreadline5-dev.
   * Suggests gcj-jdk instead of gcj, drop gpc suggestion.
 
- -- Junichi Uekawa <dancer@debian.org>  Wed, 21 Sep 2011 11:24:40 +0900
+ -- Junichi Uekawa <dancer@debian.org>  Wed, 21 Sep 2011 11:29:00 +0900
 
 binfmtc (0.16-1) unstable; urgency=low
 
