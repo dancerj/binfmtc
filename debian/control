@@ -7,7 +7,7 @@ Standards-Version: 3.7.2
 
 Package: binfmtc
 Architecture: any
-Depends: ${shlibs:Depends}, gcc, binutils, g++, binfmt-support
+Depends: ${shlibs:Depends}, ${misc:Depends}, gcc, binutils, g++, binfmt-support
 Recommends: libreadline-dev
 Suggests: gfortran, gcj-jdk
 Description: Execute C program as script
