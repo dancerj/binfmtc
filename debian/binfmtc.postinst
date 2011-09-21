@@ -8,7 +8,6 @@ if [ configure = "$1" -a -x /usr/sbin/update-binfmts ]; then
     /usr/sbin/update-binfmts --import gcjcompile
     /usr/sbin/update-binfmts --import fcompile
     /usr/sbin/update-binfmts --import f95compile
-    /usr/sbin/update-binfmts --import pcompile
 fi
 
 #DEBHELPER#

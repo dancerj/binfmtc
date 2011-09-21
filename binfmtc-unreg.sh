@@ -9,6 +9,7 @@ echo -1 > /proc/sys/fs/binfmt_misc/asmassembly
 echo -1 > /proc/sys/fs/binfmt_misc/fcompile
 echo -1 > /proc/sys/fs/binfmt_misc/f95compile
 echo -1 > /proc/sys/fs/binfmt_misc/gcjcompile
+# backwards compatibility, keep the pcompile remove.
 echo -1 > /proc/sys/fs/binfmt_misc/pcompile
 echo SUCCESS
 

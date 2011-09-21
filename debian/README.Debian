@@ -16,7 +16,6 @@ See the following manual pages for details on each language.
 	binfmtasm-interpreter
 	binfmtf-interpreter
 	binfmtf95-interpreter
-	binfmtp-interpreter
 	binfmtgcj-interpreter
 	binfmtc-interpreter
 	binfmtcxx-interpreter
@@ -27,4 +26,4 @@ There are example light-weight interactive languages, which are
 	realcsh.c
 	realksh.c
 
- -- Junichi Uekawa <dancer@debian.org>, Sat,  4 Oct 2008 22:51:44 -0700
+ -- Junichi Uekawa <dancer@debian.org>, Wed, 21 Sep 2011 10:25:04 +0900
