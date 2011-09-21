@@ -1,5 +1,5 @@
 #!/bin/bash
 #  requires installation in host system also.
 
-apt-get install -y --force-yes libreadline5-dev sudo g77 gcj gpc 
+apt-get install -y --force-yes libreadline-dev sudo gfortran gcj-jdk
 make check 
