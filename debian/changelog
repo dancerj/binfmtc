@@ -1,3 +1,10 @@
+binfmtc (0.17-2) unstable; urgency=medium
+
+  * Update debheper compat level 9, and check with debdiff.
+    (Closes: #817377).
+
+ -- Junichi Uekawa <dancer@debian.org>  Tue, 28 Jun 2016 20:11:01 +0900
+
 binfmtc (0.17-1) unstable; urgency=low
 
   [ Junichi Uekawa ]
