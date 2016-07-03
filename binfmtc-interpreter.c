@@ -36,34 +36,34 @@ char* compile_source(const char *sourcename)
   char* origdir = getcwd(NULL, 0);
   char* path = strdup (sourcename);
   char* path_delimiter;
-  char* tempfilename = NULL; 
+  char* tempfilename = NULL;
   char* s = NULL;
   char* gcccommandline = NULL;
   size_t size;
   FILE* f;
   int i;
-  
+
   asprintf(&tempfilename, "%s/binfmtcXXXXXX",
 	   getenv("BINFMTCTMPDIR")?:
 	   getenv("TMPDIR")?:
 	   getenv("TEMPDIR")?:
 	   "/tmp"
 	   );
-  
+
   if (NULL==(path_delimiter=strrchr(path, '/')))
     {
-      fprintf(stderr, 
-	      "binfmtc: Could not determine the directory name of source %s\n", 
+      fprintf(stderr,
+	      "binfmtc: Could not determine the directory name of source %s\n",
 	      sourcename);
       return NULL;
     }
-  
+
   *path_delimiter=0;/* obtain the dirname */
   close(mkstemp(tempfilename)); /* get temporary filename */
   if (!(f=fopen(sourcename,"rt")))
     {
-      fprintf(stderr, 
-	      "binfmtc: Could not open file %s for read\n", 
+      fprintf(stderr,
+	      "binfmtc: Could not open file %s for read\n",
 	      sourcename);
       unlink(tempfilename);
       return NULL;
@@ -71,19 +71,19 @@ char* compile_source(const char *sourcename)
 
   if (!getline (&s, &size, f))
     {
-      fprintf(stderr, 
-	      "binfmtc: Could not read file %s\n", 
+      fprintf(stderr,
+	      "binfmtc: Could not read file %s\n",
 	      sourcename);
       unlink(tempfilename);
       return NULL;
     }
 
   /* compare with magic */
-  if (size < BINFMTC_MAGIC_LEN || 
+  if (size < BINFMTC_MAGIC_LEN ||
       (memcmp(binfmtc_magic, s, BINFMTC_MAGIC_LEN)))
     {
-      fprintf(stderr, 
-	      "binfmtc: %s magic invalid \n", 
+      fprintf(stderr,
+	      "binfmtc: %s magic invalid \n",
 	      sourcename);
       unlink(tempfilename);
       return NULL;
@@ -113,26 +113,26 @@ char* compile_source(const char *sourcename)
 
   if (chdir(path))			/* go to the source's dir */
     {
-      fprintf(stderr, 
-	      "binfmtc: Cannot chdir to directory where source is: %s \n", 
+      fprintf(stderr,
+	      "binfmtc: Cannot chdir to directory where source is: %s \n",
 	      path);
       unlink(tempfilename);
       return NULL;
     }
-  
+
   if (system(gcccommandline))
     {
-      fprintf(stderr, 
-	      "binfmtc: Compilation failed for %s, see above messages for details\n", 
+      fprintf(stderr,
+	      "binfmtc: Compilation failed for %s, see above messages for details\n",
 	      sourcename);
       unlink(tempfilename);
       return NULL;
     }
-  
+
   if (chdir(origdir))
     {
-      fprintf(stderr, 
-	      "binfmtc: Cannot chdir to original working directory: %s \n", 
+      fprintf(stderr,
+	      "binfmtc: Cannot chdir to original working directory: %s \n",
 	      path);
       unlink(tempfilename);
       return NULL;
@@ -147,10 +147,10 @@ char* compile_source(const char *sourcename)
 
 /**
    Function to execute the compiled program.
-   
+
    The reason the compiled program is execed as the parent program
-   is to allow use of same PID for the compiled program, so that 
-   it is possible to use "strace" "kill -HUP" and other conventional 
+   is to allow use of same PID for the compiled program, so that
+   it is possible to use "strace" "kill -HUP" and other conventional
    methods of debugging.
  */
 int exec_prog(const char * filename, int argc, char**argv)
@@ -162,7 +162,7 @@ int exec_prog(const char * filename, int argc, char**argv)
     {
     case -1:
       /* fork failed */
-      fprintf(stderr, 
+      fprintf(stderr,
 	      "binfmtc: Failed to fork \n");
       return EXIT_FAILURE;
       break;
@@ -186,7 +186,7 @@ int exec_prog(const char * filename, int argc, char**argv)
       /* I am the parent process, exec into the built program */
       waitpid(pid,NULL,0);
       execvp(filename, argv);
-      fprintf(stderr, 
+      fprintf(stderr,
 	      "binfmtc: failed execvp of %s \n", filename);
       break;
     }
