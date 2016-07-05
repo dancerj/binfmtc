@@ -52,11 +52,10 @@ int main(int argc, char** argv)
   defsp t, defs=NULL;
   defsp header=NULL;
   int i;
-  
-  
+
   for (i=1; i < argc; ++i)
     header=add_string(header, argv[i]);
-  
+
   defs=add_string(defs, "#include <stdlib.h>");
   defs=add_string(defs, "#include <unistd.h>");
   defs=add_string(defs, "#include <stdio.h>");
@@ -68,7 +67,7 @@ int main(int argc, char** argv)
 	  free(str);
 	  continue;
 	}
-      
+
       add_history(str);
 
       if (*str=='#')
@@ -101,21 +100,21 @@ int main(int argc, char** argv)
 	       );
       f = fdopen(fd=mkstemp(tempfilename), "w");
       fchmod(fd, 0700);
-      
-      fprintf(f, 
+
+      fprintf(f,
 	      "/*BINFMTC:");
       for (t=header; t; t=t->next)
 	{
 	  fprintf(f," %s", t->s);
 	}
-      
-      fprintf(f, 
+
+      fprintf(f,
 	      "\n*/\n");
       for (t=defs; t; t=t->next)
 	{
 	  fprintf(f, "%s\n", t->s);
 	}
-      fprintf(f, 
+      fprintf(f,
 	      "int main(int argc, char ** argv)\n"
 	      "{\n"
 	      "%s;\n"
